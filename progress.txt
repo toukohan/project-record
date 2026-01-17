@@ -195,7 +195,30 @@ Verified:
 - All orientation copy is covered by UI tests
 - Existing functionality unchanged
 
+## DEPLOY-001: Public deployment - BLOCKED (requires user action)
+
+Implemented:
+- Created .github/workflows/deploy.yml for GitHub Pages deployment
+- Configured vite.config.ts with dynamic base path for GitHub Pages
+- Deploy workflow creates 404.html for SPA routing (handles direct URL access)
+- Deploy workflow runs tests before deploying (deployment blocked if tests fail)
+- Updated README with deployment URL and usage instructions
+
+Blocking Steps (requires repository owner action):
+1. Configure git remote if not set: `git remote add origin <repo-url>`
+2. Push to GitHub: `git push -u origin main`
+3. Go to repository Settings → Pages
+4. Set Source to "GitHub Actions"
+5. Push any change to main to trigger deployment
+
+After completing these steps:
+- Verify deployment at https://toukohan.github.io/landing/
+- Test all routes work on direct access and page refresh
+- Update prd.json to mark deploy-001 as passes: true
+
+Current status: Configuration ready, awaiting user action to enable GitHub Pages.
+
 ## Sprint Status
 
-All 10 PRD requirements pass.
-Sprint complete.
+10 of 11 PRD requirements pass.
+1 requirement (deploy-001) blocked awaiting user action.

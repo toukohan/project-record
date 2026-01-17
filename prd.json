@@ -240,7 +240,29 @@
     "Run test suite and verify orientation content is covered by UI tests"
   ],
   "passes": true
+},
+{
+  "id": "deploy-001",
+  "title": "Capability discovery interface is deployed and publicly accessible",
+  "description": "Prepare and deploy the application so it can be shared with external reviewers without caveats or setup friction.",
+  "acceptance_criteria": [
+    "Application is deployed to a public URL",
+    "Production build runs without errors",
+    "Routing works correctly on page refresh",
+    "All primary routes are accessible directly via URL",
+    "README includes deployment URL and brief usage instructions",
+    "No development-only warnings or placeholders are visible",
+    "Build and test pipeline remains unchanged and passing"
+  ],
+  "verification": [
+    "Visit deployed URL and navigate through full evaluation flow",
+    "Refresh on nested routes and confirm no 404s",
+    "Run CI pipeline and confirm green status",
+    "Share URL with a non-technical user and confirm basic usability"
+  ],
+  "passes": false
 }
+
 
 
 
