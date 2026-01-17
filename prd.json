@@ -1,0 +1,85 @@
+{
+  "meta": {
+    "product": "Capability Discovery Interface",
+    "description": "Candidate-controlled landing page that enables employers to evaluate reasoning, learning, and fit through investigation rather than filtering.",
+    "guiding_principles": [
+      "Foundations before features",
+      "Verification is a product requirement",
+      "Static-first, extend later",
+      "Small tasks, provable completion",
+      "CI must stay green"
+    ]
+  },
+  "requirements": [
+    {
+      "id": "env-001",
+      "title": "Reproducible development environment initializes successfully",
+      "description": "Set up a reproducible development environment that can be installed and run from a clean checkout.",
+      "acceptance_criteria": [
+        "Repository installs dependencies using a single documented command",
+        "A development server can be started locally",
+        "A production build command exists and completes successfully",
+        "README documents install, dev, build, and test commands",
+        "All commands succeed on a clean machine"
+      ],
+      "verification": [
+        "Run install command from clean checkout",
+        "Run dev server command and verify process starts",
+        "Run build command and verify successful exit"
+      ],
+      "passes": false
+    },
+    {
+      "id": "test-001",
+      "title": "Test harness is configured and runs in CI",
+      "description": "Establish a minimal automated test setup to verify future features.",
+      "acceptance_criteria": [
+        "A test runner is configured",
+        "At least one test file exists",
+        "Tests can be run via a single command",
+        "Tests run as part of CI or a local equivalent",
+        "Test command exits successfully"
+      ],
+      "verification": [
+        "Run test command locally",
+        "Verify at least one passing test",
+        "Verify test command fails if assertion is broken"
+      ],
+      "passes": false
+    },
+    {
+      "id": "ui-001",
+      "title": "Landing page renders with evaluation-focused framing",
+      "description": "Create a minimal landing page that frames the site as an evaluation surface rather than a resume or portfolio.",
+      "acceptance_criteria": [
+        "Root route renders without errors",
+        "Page includes a clear positioning statement about evaluation",
+        "Language avoids resume-style claims",
+        "Page content is static and deterministic",
+        "Page is covered by at least one automated test"
+      ],
+      "verification": [
+        "Start dev server and load root route",
+        "Run test suite and verify landing page test passes"
+      ],
+      "passes": false
+    },
+    {
+      "id": "ui-002",
+      "title": "Exploration path is visible on landing page",
+      "description": "Provide visible entry points that invite investigation, even if underlying features are placeholders.",
+      "acceptance_criteria": [
+        "Landing page includes at least two exploration CTAs",
+        "CTAs clearly describe future interaction (e.g. 'Ask how I work', 'Check role fit')",
+        "CTA targets are valid routes or placeholders",
+        "Routes render without runtime errors",
+        "Routes are covered by minimal tests"
+      ],
+      "verification": [
+        "Navigate to CTA routes",
+        "Run test suite verifying route rendering"
+      ],
+      "passes": false
+    }
+  ]
+}
