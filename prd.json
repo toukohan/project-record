@@ -101,7 +101,30 @@
     "Breaking the model shape causes tests or typecheck to fail"
   ],
   "passes": true
+},
+{
+  "id": "exp-002",
+  "title": "Read-only Experience Explorer renders canonical experience data",
+  "description": "Expose the canonical experience data model through a read-only UI that allows employers to explore context, constraints, decisions, outcomes, and lessons learned.",
+  "acceptance_criteria": [
+    "A new route exists for exploring experiences (e.g. /experience or /experiences)",
+    "The UI renders experiences exclusively from the canonical experience data model",
+    "At least one experience can be selected and viewed in detail",
+    "The detail view displays context, constraints, decisions, outcomes, and lessons learned",
+    "Navigation between experiences is possible without page reloads",
+    "The UI is deterministic and contains no AI-generated content",
+    "The implementation introduces no breaking changes to existing routes",
+    "All rendered content avoids resume-style claims and marketing language"
+  ],
+  "verification": [
+    "Navigate to the experience explorer route and view each experience",
+    "Verify that rendered content matches the canonical data model exactly",
+    "Run test suite and confirm new UI tests pass",
+    "Break experience data shape and confirm tests or typecheck fail"
+  ],
+  "passes": true
 }
+
 
   ]
 }

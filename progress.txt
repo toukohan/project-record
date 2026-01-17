@@ -71,6 +71,22 @@ Verified:
 - npm test passes (11 tests total)
 - Breaking model shape causes typecheck and tests to fail
 
+## EXP-002: Experience Explorer UI ✓
+
+Implemented:
+- Created src/pages/Experiences.tsx with list and detail views
+- Route /experiences shows all experiences as links
+- Route /experiences/:id shows full experience detail
+- Detail view displays: context, constraints, decisions, outcomes, lessons learned, signals
+- Client-side navigation between experiences
+- No AI-generated content, purely deterministic rendering from data model
+- Added 3 tests for experience explorer (list, detail, not found)
+
+Verified:
+- npm run build succeeds
+- npm test passes (14 tests total)
+- Existing routes unaffected
+
 ## Sprint Complete
 
 All PRD requirements now pass.
