@@ -1,2 +1,17 @@
 Sprint started.
 No features implemented yet.
+
+## ENV-001: Reproducible development environment ✓
+
+Implemented:
+- Vite + React + TypeScript project structure
+- package.json with dev, build, test scripts
+- Vitest configured for testing with jsdom environment
+- Minimal App component with placeholder content
+- README documenting all commands
+
+Verified:
+- npm install succeeds
+- npm run dev starts server on localhost:5173
+- npm run build produces dist/ output
+- npm test passes (1 test)

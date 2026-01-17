@@ -27,7 +27,7 @@
         "Run dev server command and verify process starts",
         "Run build command and verify successful exit"
       ],
-      "passes": false
+      "passes": true
     },
     {
       "id": "test-001",
