@@ -111,109 +111,7 @@ I deployed the application so it could be accessed via mobile browsers, rather t
 
 ---
 
-## Experience 3: JavaFX Time Management Application (Programming II Course Project)
-
-### Context
-Solo course project for the second programming course during my first year of university.  
-The project was developed over ~3 months with weekly or bi-weekly milestones.
-
-The task was to design and implement a desktop application using Java and JavaFX, starting from an initial design phase.
-
-### Constraints
-- Long-lived project with staged deadlines
-- Limited prior experience with object-oriented design at this scale
-- Requirement to design before implementation
-- Concurrent heavy course workload
-
-### Decision
-I chose to build a time management application for tracking courses and their deadlines.  
-I designed the system upfront, including UI sketches, data models, and service responsibilities.
-
-The application stored data using the file system, requiring manual serialization and parsing of objects.
-
-### Outcome
-- Functional application that met course requirements and passed evaluation
-- Implemented UI using JavaFX and structured logic using object-oriented abstractions
-- Gained first exposure to the long-term consequences of early design decisions
-
-The final structure felt overengineered and awkward, and the application was not polished into something I would personally want to use.
-
-### What Worked
-- Learned core object-oriented concepts through sustained use
-- Experienced the value and cost of separating responsibilities
-- Understood how early abstractions constrain later changes
-- Built a non-trivial system over an extended timeline
-
-### What Didn’t
-- Overengineering in early design created friction later
-- Some architectural decisions were unnecessary in hindsight
-- UI development with JavaFX was slow and frustrating
-- Project quality plateaued due to competing academic demands
-
-### What I’d Do Differently
-- Start with a smaller, more concrete core before abstracting
-- Delay architectural generalization until usage patterns emerge
-- Be more selective about responding to exploratory feedback mid-project
-
-### Signals This Experience Demonstrates
-- First encounter with long-term architectural consequences
-- Early tendency toward abstraction before necessity
-- Growing awareness of design cost vs. benefit
-- Foundation for later emphasis on scope control and pragmatic architecture
-
----
-
-## Experience 4: Early-Stage Next.js Companion App for Path of Exile 2 (PoEBoss)
-
-### Context
-Personal project started around the closed beta release of Path of Exile 2.  
-I had extensive experience with the first game and noticed growing publicity around upcoming boss difficulty and mechanics.
-
-We had access to the game via purchasable beta keys, and the idea was to build a strategic companion web application to help players prepare for boss encounters.
-
-### Constraints
-- Data gathering required significant manual effort from gameplay and external sources
-- No certainty that players would want or use a separate strategy resource
-- Project viability depended on sustained content creation
-- Learning-driven project without external commitments
-
-### Decision
-I chose to build a simple Next.js application focused on core functionality only:
-- CRUD for bosses, abilities, media, and strategies
-- No styling or premature polish
-
-The intent was to validate feasibility and usefulness before investing heavily in content creation or presentation.
-
-### Outcome
-- Functional but minimal application implemented
-- Learned about Next.js development behavior, including caching during development
-- After assessing the effort required to gather and maintain high-quality data, and the risk that user interest would be limited, I decided not to continue development
-
-### What Worked
-- Started with a minimal, functional core
-- Explicitly avoided early overengineering
-- Evaluated the cost of content creation relative to potential value
-- Made a conscious decision to stop rather than forcing continuation
-
-### What Didn’t
-- No early validation of actual user demand
-- Underestimated the ongoing effort required for data-heavy projects
-- Project depended heavily on sustained manual input
-
-### What I’d Do Differently
-- Validate user interest earlier (e.g. community discussion or surveys)
-- Define clearer success and abandonment criteria upfront
-- Separate technical exploration from content-heavy commitments
-
-### Signals This Experience Demonstrates
-- Market- and effort-aware decision-making
-- Improved scope discipline compared to earlier projects
-- Willingness to abandon work based on cost–benefit assessment
-- Healthy separation between learning value and sunk-cost pressure
-
----
-
-## Experience 5: First Professional Web Development Role (Local Company)
+## Experience 3: First Professional Web Development Role (Local Company)
 
 ### Context
 Worked as a web developer improving an existing e-commerce site.  
@@ -266,7 +164,7 @@ Shifted working model to:
 
 ---
 
-## Experience 6: University Software Engineering Group Project
+## Experience 4: University Software Engineering Group Project
 
 ### Context
 University Software Engineering course group project with an imaginary client.  
@@ -322,7 +220,7 @@ I intentionally reduced the project scope and technical ambition:
 
 ---
 
-## Experience 7: Academic Workload Prioritization
+## Experience 5: Academic Workload Prioritization
 
 ### Context
 A period with an overloaded university course schedule.
