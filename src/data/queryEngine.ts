@@ -75,7 +75,9 @@ function detectIntent(question: string): QueryIntent {
     return 'greeting'
   }
 
-  // Specific intents should be checked before general ones
+  // Specific intents should be checked before experience keywords
+  // because questions like "What decisions did you make in the university project?"
+  // should be handled by the decision handler, not experience handler
 
   // Decision-related - check before experience
   if (/decision|decide|chose|choice|why did you|trade-?off/.test(question)) {
@@ -87,8 +89,8 @@ function detectIntent(question: string): QueryIntent {
     return 'lesson'
   }
 
-  // Fit-related - check before experience (management, fit, suitable)
-  if (/fit|suitable|right for|match|align|management|manager/.test(question)) {
+  // Fit-related - use word boundaries to avoid matching "management" in experience titles
+  if (/\bfit\b|suitable|right for|match|align|\bmanagement position|\bmanager\b/.test(question)) {
     return 'fit'
   }
 
@@ -107,8 +109,10 @@ function detectIntent(question: string): QueryIntent {
     return 'context'
   }
 
-  // Experience-related - more general, check after specific intents
-  if (/experience|project|work|job|role|university|professional|academic/.test(question)) {
+  // Experience-related - check for specific experience keywords
+  // These are more specific than general intent patterns
+  const experienceKeywords = /bug.?track|workforce|työvoimakoulutus|mutudu|todo app|grocery|shared list|javafx|time management|programming ii|desktop app|poe|path of exile|poeboss|companion|university|group project|team project|software engineering course|professional|first job|web dev|wordpress|e-?commerce|academic|workload|priorit|experience|project|work|job|role/
+  if (experienceKeywords.test(question)) {
     return 'experience'
   }
 
@@ -129,7 +133,15 @@ function handleExperienceQuery(question: string): QueryResponse {
   // Try to match specific experience
   let matchedExperience: Experience | undefined
 
-  if (/university|group|team project|software engineering course/.test(question)) {
+  if (/bug.?track|workforce|työvoimakoulutus/.test(question)) {
+    matchedExperience = experiences.find((e) => e.id === 'bug-tracker-workforce-training')
+  } else if (/mutudu|todo app|grocery|shared list/.test(question)) {
+    matchedExperience = experiences.find((e) => e.id === 'mutudu-todo-app')
+  } else if (/javafx|time management|programming ii|desktop app/.test(question)) {
+    matchedExperience = experiences.find((e) => e.id === 'javafx-time-management')
+  } else if (/poe|path of exile|poeboss|companion app|game/.test(question)) {
+    matchedExperience = experiences.find((e) => e.id === 'poeboss-companion-app')
+  } else if (/university|group|team project|software engineering course/.test(question)) {
     matchedExperience = experiences.find((e) => e.id === 'university-group-project')
   } else if (/professional|first job|web dev|wordpress|e-?commerce/.test(question)) {
     matchedExperience = experiences.find((e) => e.id === 'first-professional-role')
@@ -196,25 +208,28 @@ function handleGapQuery(): QueryResponse {
 
 function handleDecisionQuery(question: string): QueryResponse {
   // Find experience with matching decision
-  for (const exp of experiences) {
-    const keywords = exp.title.toLowerCase()
-    if (question.includes('university') || question.includes('group') || question.includes('team')) {
-      if (exp.id === 'university-group-project') {
+  const matchPatterns: Array<{ pattern: RegExp; id: string }> = [
+    { pattern: /bug.?track|workforce|työvoimakoulutus/, id: 'bug-tracker-workforce-training' },
+    { pattern: /mutudu|todo app|grocery/, id: 'mutudu-todo-app' },
+    { pattern: /javafx|time management|programming ii/, id: 'javafx-time-management' },
+    { pattern: /poe|path of exile|poeboss|companion/, id: 'poeboss-companion-app' },
+    { pattern: /university|group|team/, id: 'university-group-project' },
+    { pattern: /professional|first job|work/, id: 'first-professional-role' },
+    { pattern: /academic|workload|priorit/, id: 'academic-prioritization' },
+  ]
+
+  for (const { pattern, id } of matchPatterns) {
+    if (pattern.test(question)) {
+      const exp = experiences.find((e) => e.id === id)
+      if (exp) {
         const decision = exp.decisions[0]
+        const tensionPart = decision.tension
+          ? `**Tension:** ${decision.tension}\n\n`
+          : ''
         return {
-          answer: `In the ${exp.title}:\n\n**Tension:** ${decision.tension}\n\n**Decision made:**\n${decision.choice.map((c) => `• ${c}`).join('\n')}`,
+          answer: `In the ${exp.title}:\n\n${tensionPart}**Decision made:**\n${decision.choice.map((c) => `• ${c}`).join('\n')}`,
           sources: [exp.title],
           followUp: 'Would you like to know the outcome of this decision?',
-        }
-      }
-    }
-    if (question.includes('professional') || question.includes('job') || question.includes('work')) {
-      if (exp.id === 'first-professional-role') {
-        const decision = exp.decisions[0]
-        return {
-          answer: `In my ${exp.title}:\n\n**Initial tension:** ${decision.tension}\n\n**Shift in approach:**\n${decision.choice.map((c) => `• ${c}`).join('\n')}`,
-          sources: [exp.title],
-          followUp: 'Would you like to know what I learned from this?',
         }
       }
     }
@@ -253,14 +268,24 @@ function handleLessonQuery(question: string): QueryResponse {
 
 function handleContextQuery(question: string): QueryResponse {
   // Find matching experience context
-  for (const exp of experiences) {
-    if (
-      (question.includes('university') || question.includes('group')) &&
-      exp.id === 'university-group-project'
-    ) {
-      return {
-        answer: `**Context for ${exp.title}:**\n\n${exp.context.join('\n')}\n\n**Constraints:**\n${exp.constraints.map((c) => `• ${c}`).join('\n')}`,
-        sources: [exp.title],
+  const matchPatterns: Array<{ pattern: RegExp; id: string }> = [
+    { pattern: /bug.?track|workforce|työvoimakoulutus/, id: 'bug-tracker-workforce-training' },
+    { pattern: /mutudu|todo app|grocery/, id: 'mutudu-todo-app' },
+    { pattern: /javafx|time management|programming ii/, id: 'javafx-time-management' },
+    { pattern: /poe|path of exile|poeboss|companion/, id: 'poeboss-companion-app' },
+    { pattern: /university|group|team/, id: 'university-group-project' },
+    { pattern: /professional|first job|work/, id: 'first-professional-role' },
+    { pattern: /academic|workload|priorit/, id: 'academic-prioritization' },
+  ]
+
+  for (const { pattern, id } of matchPatterns) {
+    if (pattern.test(question)) {
+      const exp = experiences.find((e) => e.id === id)
+      if (exp) {
+        return {
+          answer: `**Context for ${exp.title}:**\n\n${exp.context.join('\n')}\n\n**Constraints:**\n${exp.constraints.map((c) => `• ${c}`).join('\n')}`,
+          sources: [exp.title],
+        }
       }
     }
   }
@@ -282,7 +307,7 @@ function handleFitQuery(): QueryResponse {
 
 function handleOutOfScope(): QueryResponse {
   return {
-    answer: `I can only answer questions grounded in my documented experiences, strengths, gaps, and fit logic. I cannot:\n\n• Make claims not supported by canonical data\n• Speculate about hypothetical scenarios\n• Provide opinions on topics outside my experience\n• Generate new achievements or metrics\n\nWhat I can discuss: my three documented experiences, the decisions and tradeoffs I made, my explicit strengths and gaps, and role fit based on that data.`,
+    answer: `I can only answer questions grounded in my documented experiences, strengths, gaps, and fit logic. I cannot:\n\n• Make claims not supported by canonical data\n• Speculate about hypothetical scenarios\n• Provide opinions on topics outside my experience\n• Generate new achievements or metrics\n\nWhat I can discuss: my ${experiences.length} documented experiences, the decisions and tradeoffs I made, my explicit strengths and gaps, and role fit based on that data.`,
     sources: [],
     followUp: 'Try asking about a specific experience, my strengths, or my gaps.',
   }

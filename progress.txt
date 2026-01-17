@@ -150,7 +150,28 @@ Verified:
 - Out-of-scope questions are refused appropriately
 - Responses match canonical data
 
+## EXP-004: Experience data synchronization ✓
+
+Implemented:
+- Updated src/data/experiences.ts with all 7 experiences from experience_reference.md
+- Added 4 new experiences: bug-tracker-workforce-training, mutudu-todo-app, javafx-time-management, poeboss-companion-app
+- Updated src/data/strengths.ts with new evidence links and 2 new strength items
+- Added "High execution capacity" and "Willingness to abandon work" as strengths
+- Added "Demand validation" as a developing area
+- Updated src/data/queryEngine.ts intent detection to handle new experiences
+- Extended pattern matching for experience-specific queries
+- Fixed intent detection ordering to handle "time management" without triggering fit logic
+- Updated out-of-scope message to dynamically reference experience count
+- Added 6 new tests validating new experiences and queries
+
+Verified:
+- npm run build succeeds
+- npm test passes (58 tests total)
+- All experience IDs are stable
+- Query engine responds correctly to queries about all 7 experiences
+- Strengths evidence links reference valid experience IDs
+
 ## Sprint Status
 
-All 8 PRD requirements pass.
+All 9 PRD requirements pass.
 Sprint complete.

@@ -20,6 +20,30 @@ describe('processQuery', () => {
     expect(response.sources).toContain('University Software Engineering Group Project')
   })
 
+  it('answers questions about bug tracker experience', () => {
+    const response = processQuery('Tell me about the bug tracker you built')
+    expect(response.answer).toContain('Bug Tracker During Workforce Training')
+    expect(response.sources).toContain('Self-Initiated Bug Tracker During Workforce Training')
+  })
+
+  it('answers questions about Mutudu todo app', () => {
+    const response = processQuery('What about the todo app project?')
+    expect(response.answer).toContain('Mutudu')
+    expect(response.sources).toContain('Mutual Todo Application (Mutudu)')
+  })
+
+  it('answers questions about JavaFX project', () => {
+    const response = processQuery('Tell me about the JavaFX time management app')
+    expect(response.answer).toContain('JavaFX Time Management')
+    expect(response.sources).toContain('JavaFX Time Management Application (Programming II Course Project)')
+  })
+
+  it('answers questions about PoEBoss companion app', () => {
+    const response = processQuery('What about the Path of Exile companion app?')
+    expect(response.answer).toContain('Path of Exile 2')
+    expect(response.sources).toContain('Early-Stage Next.js Companion App for Path of Exile 2 (PoEBoss)')
+  })
+
   it('answers strength questions', () => {
     const response = processQuery('What are your strengths?')
     expect(response.answer).toContain('strength')

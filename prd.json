@@ -192,7 +192,32 @@
     "Disable AI or break grounding input and verify tests fail"
   ],
   "passes": true
+},
+{
+  "id": "exp-004",
+  "title": "Experience data is synchronized with updated reference and system integrity is preserved",
+  "description": "Update canonical experience data to reflect changes in experience_reference.md and ensure all dependent systems remain correct, consistent, and fully verified.",
+  "acceptance_criteria": [
+    "Canonical experience data files are updated to reflect the latest experience_reference.md",
+    "All experience fields (context, constraints, decisions, outcomes, lessons learned, signals) accurately match the updated reference",
+    "No stale or removed experiences remain in the data registry",
+    "Any new experiences in the reference are added as separate, properly structured data files",
+    "Experience IDs remain stable for existing experiences unless explicitly deprecated",
+    "Strengths and gaps evidence references are updated to match the new experience set",
+    "Fit evaluation explanations remain accurate given updated experience data",
+    "Query engine responses reflect updated experience content without hallucination or mismatch"
+  ],
+  "verification": [
+    "Run full test suite and confirm all existing tests pass",
+    "Add or update tests to validate new or modified experiences",
+    "Verify experience explorer renders all updated experiences correctly",
+    "Verify strengths and gaps matrix references valid experience IDs",
+    "Submit representative queries to the query engine and confirm responses align with updated experience data",
+    "Intentionally introduce a mismatch between reference and data and confirm tests fail"
+  ],
+  "passes": true
 }
+
 
 
 

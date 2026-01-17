@@ -34,19 +34,25 @@ export const strengthItems: StrengthItem[] = [
     label: 'Judgment under constraints',
     description: 'Making practical decisions when time, resources, or information are limited.',
     category: 'strong',
-    evidenceIds: ['university-group-project', 'academic-prioritization'],
+    evidenceIds: ['university-group-project', 'academic-prioritization', 'poeboss-companion-app'],
   },
   {
     label: 'Scope control',
     description: 'Reducing ambition to match reality rather than over-promising.',
     category: 'strong',
-    evidenceIds: ['university-group-project'],
+    evidenceIds: ['university-group-project', 'poeboss-companion-app'],
   },
   {
     label: 'Learning through iteration',
     description: 'Improving by shipping small increments and responding to feedback.',
     category: 'strong',
-    evidenceIds: ['first-professional-role'],
+    evidenceIds: ['first-professional-role', 'mutudu-todo-app', 'bug-tracker-workforce-training'],
+  },
+  {
+    label: 'High execution capacity',
+    description: 'Ability to build and ship functional systems independently.',
+    category: 'strong',
+    evidenceIds: ['bug-tracker-workforce-training', 'mutudu-todo-app', 'javafx-time-management'],
   },
   {
     label: 'Willingness to adapt process',
@@ -58,7 +64,13 @@ export const strengthItems: StrengthItem[] = [
     label: 'Honest reflection on failure modes',
     description: 'Identifying and admitting when my approach caused problems.',
     category: 'strong',
-    evidenceIds: ['first-professional-role', 'university-group-project'],
+    evidenceIds: ['first-professional-role', 'university-group-project', 'bug-tracker-workforce-training'],
+  },
+  {
+    label: 'Willingness to abandon work',
+    description: 'Stopping projects based on cost-benefit assessment rather than sunk-cost pressure.',
+    category: 'strong',
+    evidenceIds: ['poeboss-companion-app'],
   },
 
   // Developing
@@ -66,7 +78,13 @@ export const strengthItems: StrengthItem[] = [
     label: 'Early architecture clarity',
     description: 'Defining clear structure upfront before implementation begins.',
     category: 'developing',
-    evidenceIds: ['university-group-project'],
+    evidenceIds: ['university-group-project', 'javafx-time-management', 'mutudu-todo-app'],
+  },
+  {
+    label: 'Demand validation',
+    description: 'Checking whether work will be used or valued before building.',
+    category: 'developing',
+    evidenceIds: ['bug-tracker-workforce-training', 'poeboss-companion-app'],
   },
 
   // Not my strength
