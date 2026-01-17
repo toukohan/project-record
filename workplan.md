@@ -1,220 +1,215 @@
-# Workplan: Reverse Hiring Interface (Candidate-Controlled Evaluation Surface)
+# Workplan: Capability Discovery Interface (Personal Hiring Surface)
 
 ## Purpose
-Replace participation in broken ATS/LinkedIn hiring funnels with a candidate-controlled interface that:
-- Captures **human attention**
-- Enables **interactive evaluation**
-- Demonstrates **real capability through use**
-- Inverts the supplicant power dynamic
-- Helps both sides assess **fit early and honestly**
+Create a candidate-controlled interface that allows employers to:
+- Discover how I think
+- Evaluate how I learn and adapt
+- Assess fit honestly and early
+- Engage in investigation mode instead of filtering mode
 
-Success is defined as:
-> Gaining minutes of genuine employer engagement instead of seconds of resume scanning.
+This is not a resume replacement.
+This is a conversion surface once attention is earned.
 
 ---
 
-## Core Thesis
-The hiring arms race (AI resumes vs AI filters) has collapsed signal value.
-The scarce resource is **human attention**, not talent.
+## Core Positioning
 
-Instead of optimizing for filters:
-- Create a new interaction surface
-- Shift evaluators from *filtering mode* → *investigation mode*
-- Replace claims with **demonstrated depth**
+### What This Interface Is
+- A tool to explore reasoning, judgment, and growth
+- A way to demonstrate capability through interaction
+- A bidirectional fit assessment
+
+### What This Interface Is NOT
+- A seniority flex
+- A list of claims
+- A keyword-optimized artifact
+- A substitute for substance
+
+---
+
+## Primary Value Proposition
+
+> “This interface helps you decide whether I can safely contribute to your team,
+> learn your domain, and deliver under real constraints.”
+
+---
+
+## Target Audience (Initial)
+Best fit for:
+- Small to mid-sized teams
+- Early-stage or pragmatic startups
+- Technical founders
+- Hiring managers tired of resume noise
+
+Not optimized for:
+- Traditional HR-first pipelines
+- Credential-heavy screening environments
 
 ---
 
 ## Design Principles
 
-1. **Not a resume**
-   - Resume = compressed claims
-   - Interface = explorable capability
-
-2. **Show, don’t assert**
-   - Evidence over bullets
-   - Multi-turn interaction over static text
-
-3. **Bidirectional evaluation**
-   - Employer evaluates candidate
-   - Candidate evaluates fit and says “no” when appropriate
-
-4. **Honest gaps increase trust**
-   - Publish strengths *and* weaknesses
-   - Confidence > overfitting
-
-5. **AI as amplifier, not disguise**
-   - Depth must already exist
-   - Interface surfaces reality, cannot fake it at scale
+1. **Show thinking, not authority**
+2. **Demonstrate learning, not perfection**
+3. **Publish constraints and gaps**
+4. **Replace claims with interrogable context**
+5. **Save employer time by saying “not a fit” when appropriate**
 
 ---
 
-## MVP Scope (Phase 1: Manual but Real)
+## MVP Scope (Phase 1)
 
-### Deliverable
-A public personal site that functions as a **reverse hiring interface**, not a portfolio.
+### 1. Landing Page
+Minimal framing:
+- Name
+- Role framing (e.g. “Software Engineer focused on learning fast and delivering reliably”)
+- Statement of purpose
 
----
-
-## Site Structure
-
-### 1. Landing
-- Minimal identity (name, role framing)
-- Framing statement:
-  > “This site helps you evaluate whether I’m a good fit for your role in minutes.”
-
-Primary CTA:
-- “Ask AI about me”
-- “Evaluate fit for your role”
+Primary CTAs:
+- “Ask about how I work”
+- “Check fit for your role”
 
 ---
 
-### 2. AI Query Interface
+### 2. AI Query Interface (Core)
 Purpose:
-- Replace passive reading with active inquiry
+- Allow employers to interrogate experience
+- Surface reasoning, tradeoffs, and reflection
 
-Capabilities:
-- Answer questions about:
-  - Past work
-  - Decision-making
-  - Tradeoffs
-  - Leadership style
-  - Technical depth
-- Admit uncertainty or gaps explicitly
-
-Requirement:
-- AI context grounded in **real work artifacts**, not generic summaries
+AI Grounding:
+- `experience_reference.md`
+- Project artifacts (where available)
+- Explicit instruction to:
+  - Be honest about gaps
+  - Prefer explanation over assertion
 
 ---
 
-### 3. Experience Section (Unflattened)
-Each role/project includes:
-- Standard summary (brief)
-- “View AI Context” expansion:
-  - Situation
+### 3. Experience Explorer
+Each experience presented as:
+- Short summary
+- Expandable “AI Context”:
   - Constraints
-  - Decisions made
+  - Decisions
   - Tradeoffs
   - Outcomes
   - Lessons learned
 
-Goal:
-- Make depth discoverable on demand
+No marketing language.
+Clarity over polish.
 
 ---
 
-### 4. Skills Matrix
-Three explicit columns:
+### 4. Strengths & Gaps Matrix
+Explicit categories:
 - Strong
-- Moderate
-- Gaps / Not my strength
+- Developing
+- Not my strength (yet)
 
-Why:
-- Signals self-awareness
-- Saves evaluator time
-- Increases credibility
+Purpose:
+- Signal self-awareness
+- Reduce mismatched conversations
+- Increase trust
 
 ---
 
-### 5. Fit Assessment Tool (Key Differentiator)
+### 5. Fit Assessment Tool (Adapted)
 
 Input:
-- Employer pastes job description
+- Job description pasted by employer
 
 Output:
-- Honest fit analysis:
-  - Strong matches (with evidence)
-  - Partial matches
-  - Non-matches
-- Recommendation:
-  - “Good fit → let’s talk”
-  - “Not a fit → don’t waste time”
+- Honest assessment:
+  - Where I fit well (with evidence)
+  - Where I partially fit
+  - Where I do not fit
 
-Principle:
-> The tool evaluates *you* as much as *they* do.
+Tone:
+- Collaborative, not salesy
+
+Key signal:
+> “I am evaluating fit too.”
 
 ---
 
 ### 6. Evidence Layer
-Linked from AI answers and fit analysis:
+Linked where relevant:
 - Repos
-- Design docs
-- Architecture diagrams
-- Postmortems
+- Course projects
 - Writeups
+- Architecture sketches (even informal)
 
-No polishing required—clarity over aesthetics.
+Incomplete artifacts are acceptable if explained.
 
 ---
 
-### 7. Clear Next Actions
-Low-friction options:
-- Schedule conversation
-- Request deeper walkthrough
+### 7. Next Actions
+Low-pressure options:
+- Request conversation
+- Ask deeper technical questions
 - Download short summary
 
-No funnel tricks. No desperation language.
+No funnels. No urgency language.
 
 ---
 
-## Implementation Notes
+## Implementation Strategy
 
-- Can be built with:
-  - No/low-code tools (e.g. Lovable)
-  - Simple static site + hosted LLM API
-- Cost at margin ≈ zero
-- Time to first version: hours–days, not weeks
+### Phase 1: Manual + Honest
+- Static site
+- One AI model
+- Limited scope
+- Focus on coherence
 
----
-
-## What This Is NOT
-
-- Not a traffic-generation strategy
-- Not a resume replacement (still needed for pipes)
-- Not effective for early-career candidates with little substance
-- Not a gimmick if depth exists
-
-This optimizes **conversion**, not discovery.
+Goal:
+> Validate that this framing resonates before automation.
 
 ---
 
-## Success Metrics
+### Phase 2: Refinement
+- Improve AI grounding
+- Add structured prompts
+- Track what employers ask
+
+---
+
+### Phase 3: Expansion (Optional)
+- More projects
+- Deeper technical artifacts
+- More nuanced fit logic
+
+Only expand what gets used.
+
+---
+
+## Success Criteria
 
 Qualitative:
-- Employers spend minutes, not seconds
-- Deeper interview questions earlier
-- Fewer mismatched calls
+- Employers engage for minutes, not seconds
+- Questions go deeper faster
+- Fewer but higher-quality conversations
 
 Quantitative:
-- Higher response quality per contact
-- Fewer applications needed per conversation
-
----
-
-## Risks & Constraints
-
-- Requires real, interrogable expertise
-- Audience-dependent (best for tech roles)
-- Does not bypass need for distribution entirely
-
-Mitigation:
-- Use site as destination link everywhere else
+- Higher response rate when shared
+- Reduced wasted interviews
 
 ---
 
 ## Strategic Outcome
 
-You are no longer:
-- One resume in a pile
+Instead of:
+- Competing in a pile
 - Optimizing for filters
+- Compressing yourself into bullets
 
-You become:
-- A discoverable system
-- A tool for evaluation
-- A candidate who controls the encounter
+You:
+- Control the interaction
+- Invite investigation
+- Compete on clarity and substance
 
 ---
 
-## Guiding Question Going Forward
-> “What should an employer be able to *discover* about me that a resume cannot show?”
+## Guiding Question
+> “What can someone discover about how I work that no resume could show?”
 
-Build everything around that.
+Everything in this project must answer that.
