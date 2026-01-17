@@ -4,7 +4,7 @@ A candidate-controlled landing page for employer evaluation.
 
 ## Live Demo
 
-**Deployment URL:** https://toukohan.github.io/landing/
+**Deployment URL:** https://toukohan.github.io/how-i-work/
 
 ## Usage
 

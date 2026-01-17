@@ -212,7 +212,7 @@ Blocking Steps (requires repository owner action):
 5. Push any change to main to trigger deployment
 
 After completing these steps:
-- Verify deployment at https://toukohan.github.io/landing/
+- Verify deployment at https://toukohan.github.io/how-i-work/
 - Test all routes work on direct access and page refresh
 - Update prd.json to mark deploy-001 as passes: true
 
