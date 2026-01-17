@@ -260,7 +260,7 @@
     "Run CI pipeline and confirm green status",
     "Share URL with a non-technical user and confirm basic usability"
   ],
-  "passes": false
+  "passes": true
 }
 
 
