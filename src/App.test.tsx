@@ -7,4 +7,9 @@ describe('App', () => {
     render(<App />)
     expect(screen.getByRole('heading')).toBeDefined()
   })
+
+  it('displays evaluation-focused positioning statement', () => {
+    render(<App />)
+    expect(screen.getByText(/helps you decide whether I can contribute/i)).toBeDefined()
+  })
 })

@@ -62,7 +62,7 @@
         "Start dev server and load root route",
         "Run test suite and verify landing page test passes"
       ],
-      "passes": false
+      "passes": true
     },
     {
       "id": "ui-002",

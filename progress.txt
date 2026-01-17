@@ -27,3 +27,16 @@ Verified:
 - npm test passes locally
 - Tests correctly fail when assertion is broken (exit code 1)
 - CI workflow configured for GitHub Actions
+
+## UI-001: Landing page with evaluation-focused framing ✓
+
+Implemented:
+- Updated App.tsx with positioning statement from workplan.md
+- Content frames the site as evaluation surface, not resume
+- No claims, only investigation-oriented language
+- Added test verifying positioning statement is present
+
+Verified:
+- npm run build succeeds
+- npm test passes (2 tests)
+- Content avoids resume-style claims
