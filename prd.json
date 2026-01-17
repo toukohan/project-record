@@ -169,7 +169,31 @@
     "Break fit logic mapping and confirm tests fail"
   ],
   "passes": true
+},
+{
+  "id": "ai-001",
+  "title": "Grounded AI query interface enables experience interrogation",
+  "description": "Introduce a constrained AI-powered query interface that allows employers to ask questions about experiences, decisions, strengths, gaps, and fit logic, grounded strictly in canonical data.",
+  "acceptance_criteria": [
+    "The existing /ask route is upgraded to an AI-powered query interface",
+    "The AI is grounded exclusively in canonical experience data, strengths/gaps data, and fit logic",
+    "The AI explicitly refuses to answer questions outside its grounding context",
+    "Responses prioritize explanation of reasoning, decisions, and tradeoffs over summaries",
+    "The AI can acknowledge gaps or uncertainty when data is insufficient",
+    "The interface supports multi-turn follow-up questions",
+    "The AI does not generate new claims, achievements, or metrics",
+    "Language remains calm, factual, and non-promotional"
+  ],
+  "verification": [
+    "Ask questions about each experience and verify answers match canonical data",
+    "Ask a question outside scope and verify the AI refuses appropriately",
+    "Ask follow-up questions and verify consistency across turns",
+    "Run test suite including prompt or response snapshot tests",
+    "Disable AI or break grounding input and verify tests fail"
+  ],
+  "passes": false
 }
+
 
 
 

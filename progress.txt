@@ -122,6 +122,27 @@ Verified:
 - Identical inputs produce identical results (deterministic)
 - Language emphasizes mutual time-saving
 
-## Sprint Complete
+## AI-001: Grounded AI query interface - BLOCKED
 
-All PRD requirements now pass.
+Blocking Ambiguity:
+This requirement asks for an "AI-powered query interface" but does not specify:
+1. Which AI provider to use (OpenAI, Anthropic, local model, etc.)
+2. How API keys should be managed (environment variables, secrets service)
+3. Whether a backend is required or if this should use client-side AI
+4. Cost/budget constraints for API calls
+5. Whether a mock/simulated AI is acceptable for MVP
+
+The guiding principles state "static-first, extend later" but an AI interface
+requires external API calls, which is not static.
+
+Options requiring clarification:
+A) Use a real AI API (requires provider choice, API key setup, possible backend)
+B) Create a simulated rule-based interface that mimics AI behavior
+C) Defer this feature to a later phase
+
+Requesting direction before proceeding.
+
+## Sprint Status
+
+7 of 8 PRD requirements pass.
+1 requirement (ai-001) blocked pending clarification.
