@@ -15,3 +15,15 @@ Verified:
 - npm run dev starts server on localhost:5173
 - npm run build produces dist/ output
 - npm test passes (1 test)
+
+## TEST-001: Test harness with CI ✓
+
+Implemented:
+- GitHub Actions workflow (.github/workflows/ci.yml)
+- Runs on push to main and pull requests
+- Executes: npm ci, npm run build, npm test
+
+Verified:
+- npm test passes locally
+- Tests correctly fail when assertion is broken (exit code 1)
+- CI workflow configured for GitHub Actions

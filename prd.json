@@ -45,7 +45,7 @@
         "Verify at least one passing test",
         "Verify test command fails if assertion is broken"
       ],
-      "passes": false
+      "passes": true
     },
     {
       "id": "ui-001",
