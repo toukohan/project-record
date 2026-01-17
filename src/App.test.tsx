@@ -6,6 +6,7 @@ import Landing from './pages/Landing'
 import Ask from './pages/Ask'
 import Fit from './pages/Fit'
 import Experiences from './pages/Experiences'
+import Strengths from './pages/Strengths'
 
 describe('App', () => {
   it('renders without crashing', () => {
@@ -73,5 +74,27 @@ describe('Experiences', () => {
       </MemoryRouter>
     )
     expect(screen.getByText(/Experience Not Found/i)).toBeDefined()
+  })
+})
+
+describe('Strengths', () => {
+  it('renders all three categories', () => {
+    render(<MemoryRouter><Strengths /></MemoryRouter>)
+    expect(screen.getByRole('heading', { name: /Strengths and Gaps/i })).toBeDefined()
+    expect(screen.getByRole('heading', { name: /^Strong$/i })).toBeDefined()
+    expect(screen.getByRole('heading', { name: /^Developing$/i })).toBeDefined()
+    expect(screen.getByRole('heading', { name: /Not my strength yet/i })).toBeDefined()
+  })
+
+  it('displays strength items with descriptions', () => {
+    render(<MemoryRouter><Strengths /></MemoryRouter>)
+    expect(screen.getByText(/Judgment under constraints/i)).toBeDefined()
+    expect(screen.getByText(/Making practical decisions/i)).toBeDefined()
+  })
+
+  it('links strengths to experience evidence', () => {
+    render(<MemoryRouter><Strengths /></MemoryRouter>)
+    const links = screen.getAllByText(/University Software Engineering Group Project/i)
+    expect(links.length).toBeGreaterThan(0)
   })
 })

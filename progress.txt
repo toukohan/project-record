@@ -87,6 +87,23 @@ Verified:
 - npm test passes (14 tests total)
 - Existing routes unaffected
 
+## EXP-003: Strengths and gaps matrix ✓
+
+Implemented:
+- Created src/data/strengths.ts with StrengthItem interface
+- Three categories: Strong, Developing, Not my strength yet
+- Each item links to evidence from canonical experiences via evidenceIds
+- Plain language descriptions without buzzwords
+- Gaps stated explicitly without hedging (e.g., "I have not worked on...")
+- Created src/pages/Strengths.tsx with route /strengths
+- Added 6 data model tests and 3 UI tests
+
+Verified:
+- npm run build succeeds
+- npm test passes (23 tests total)
+- Evidence IDs reference valid experiences (validated by test)
+- Breaking experience IDs causes tests to fail
+
 ## Sprint Complete
 
 All PRD requirements now pass.

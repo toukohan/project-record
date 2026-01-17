@@ -123,7 +123,30 @@
     "Break experience data shape and confirm tests or typecheck fail"
   ],
   "passes": true
+},
+{
+  "id": "exp-003",
+  "title": "Explicit strengths and gaps matrix is visible and trustworthy",
+  "description": "Provide a clear, honest, static matrix of strengths and gaps that helps employers quickly assess alignment and avoid mismatched roles.",
+  "acceptance_criteria": [
+    "A new route exists for viewing strengths and gaps (e.g. /strengths or /fit-overview)",
+    "Strengths are grouped into at least three categories (e.g. Strong, Developing, Not my strength)",
+    "Each listed item uses clear, plain language without buzzwords or marketing claims",
+    "Items are grounded in evidence from the canonical experience data model",
+    "Gaps are explicitly stated and not softened with hedging language",
+    "The matrix is static and deterministic (no AI-generated content)",
+    "Language emphasizes fit and alignment, not self-promotion",
+    "The page renders without errors and integrates with existing routing"
+  ],
+  "verification": [
+    "Navigate to the strengths and gaps route and verify all categories render",
+    "Confirm that listed strengths and gaps align with experience data",
+    "Run test suite and verify page rendering is covered by automated tests",
+    "Break referenced experience data and confirm tests or typecheck fail"
+  ],
+  "passes": true
 }
+
 
 
   ]
