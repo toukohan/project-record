@@ -79,7 +79,7 @@
         "Navigate to CTA routes",
         "Run test suite verifying route rendering"
       ],
-      "passes": false
+      "passes": true
     }
   ]
 }

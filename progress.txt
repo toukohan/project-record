@@ -40,3 +40,21 @@ Verified:
 - npm run build succeeds
 - npm test passes (2 tests)
 - Content avoids resume-style claims
+
+## UI-002: Exploration paths on landing page ✓
+
+Implemented:
+- Added react-router-dom for client-side routing
+- Created src/pages/ directory with Landing, Ask, Fit components
+- Landing page CTAs: "Ask about how I work" → /ask, "Check fit for your role" → /fit
+- Placeholder content on /ask and /fit routes
+- Tests for all routes (5 tests total)
+
+Verified:
+- npm run build succeeds
+- npm test passes (5 tests)
+- Routes render without errors
+
+## Sprint Complete
+
+All PRD requirements now pass.
