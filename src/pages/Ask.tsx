@@ -24,10 +24,37 @@ export default function Ask() {
   return (
     <main>
       <h1>Ask About How I Work</h1>
-      <p>
-        Ask questions about my experiences, decisions, strengths, or gaps.
-        All answers are grounded in documented data—no generated claims.
-      </p>
+
+      <section>
+        <h2>What This Tells You</h2>
+        <p>
+          This interface answers questions about my experiences, decisions, strengths, and gaps.
+          All responses are grounded in documented data—no generated claims, no speculation.
+        </p>
+      </section>
+
+      <section>
+        <h2>What You Can Ask</h2>
+        <ul>
+          <li>Questions about specific experiences (e.g., "Tell me about the university project")</li>
+          <li>Questions about decisions and tradeoffs (e.g., "Why did you scope down?")</li>
+          <li>Questions about strengths and gaps (e.g., "What are your weaknesses?")</li>
+          <li>Questions about fit for a role type (e.g., "Would you fit a management role?")</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>What It Cannot Answer</h2>
+        <ul>
+          <li>Questions outside documented experiences</li>
+          <li>Speculative or hypothetical scenarios</li>
+          <li>Topics unrelated to professional capability</li>
+        </ul>
+        <p>
+          If you get an "out of scope" response, try the <Link to="/fit-evaluation">Fit Evaluation</Link>{' '}
+          or browse <Link to="/experiences">Experiences</Link> directly.
+        </p>
+      </section>
 
       {conversation.length > 0 && (
         <section>

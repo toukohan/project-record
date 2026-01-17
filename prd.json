@@ -216,7 +216,32 @@
     "Intentionally introduce a mismatch between reference and data and confirm tests fail"
   ],
   "passes": true
+},
+{
+  "id": "ux-001",
+  "title": "Guided evaluation flow orients employers and accelerates fit decisions",
+  "description": "Introduce a lightweight narrative and sequencing layer that helps employers understand where to start, how to explore, and when they have enough information to decide.",
+  "acceptance_criteria": [
+    "The landing page presents a clear recommended evaluation path with an estimated time cost (e.g. '2–5 minutes to decide fit')",
+    "Each primary section (Experiences, Strengths, Fit, Ask) includes a short orientation explaining what questions it answers",
+    "Orientation copy explicitly states when a section is sufficient to stop exploring",
+    "Experiences page includes guidance on how to choose which experiences to read (not all are required)",
+    "Strengths and gaps page explains how it should influence a hiring decision",
+    "Fit evaluation page explains when its output should override further exploration",
+    "Ask page explains what kinds of questions it can and cannot answer",
+    "Cross-links between sections are intentional and directional (e.g. 'If this concerns you, check X next')",
+    "Language remains neutral, factual, and non-promotional",
+    "No new business logic, data models, or AI behavior is introduced"
+  ],
+  "verification": [
+    "Follow the recommended evaluation path end-to-end and confirm it leads to a clear decision point",
+    "Verify that each section includes explicit 'what this tells you' or 'when to stop' guidance",
+    "Confirm existing functionality and logic remain unchanged",
+    "Run test suite and verify orientation content is covered by UI tests"
+  ],
+  "passes": true
 }
+
 
 
 

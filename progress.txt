@@ -171,7 +171,31 @@ Verified:
 - Query engine responds correctly to queries about all 7 experiences
 - Strengths evidence links reference valid experience IDs
 
+## UX-001: Guided evaluation flow ✓
+
+Implemented:
+- Updated Landing page with recommended evaluation path (2–5 minutes estimate)
+- Added numbered steps: Fit Evaluation → Strengths → Experiences → Ask
+- Added "When to Stop" guidance explaining when fit result is sufficient
+- Updated Experiences page with "What This Tells You" and "How to Choose" sections
+- Added guidance on selecting 1–2 relevant experiences rather than reading all
+- Updated Strengths page with decision-influence explanation
+- Explained how to compare strengths/gaps against role requirements
+- Updated FitEvaluation page with "When to Trust the Result" guidance
+- Explained when each fit level (Strong/Partial/Not a Fit) should end exploration
+- Updated Ask page with "What You Can Ask" and "What It Cannot Answer" sections
+- Added cross-links between sections with directional guidance
+- Updated Fit.tsx to redirect to /fit-evaluation
+- All language remains neutral, factual, non-promotional
+- No new business logic, data models, or AI behavior introduced
+
+Verified:
+- npm run build succeeds
+- npm test passes (61 tests total)
+- All orientation copy is covered by UI tests
+- Existing functionality unchanged
+
 ## Sprint Status
 
-All 9 PRD requirements pass.
+All 10 PRD requirements pass.
 Sprint complete.

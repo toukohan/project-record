@@ -1,11 +1,6 @@
-import { Link } from 'react-router-dom'
+import { Navigate } from 'react-router-dom'
 
 export default function Fit() {
-  return (
-    <main>
-      <h1>Check Fit For Your Role</h1>
-      <p>This feature is coming soon.</p>
-      <Link to="/">Back to home</Link>
-    </main>
-  )
+  // Redirect to the actual fit evaluation tool
+  return <Navigate to="/fit-evaluation" replace />
 }

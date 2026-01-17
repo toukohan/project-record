@@ -5,15 +5,47 @@ function ExperienceList() {
   return (
     <main>
       <h1>Experience Explorer</h1>
-      <p>Select an experience to explore context, constraints, decisions, and lessons learned.</p>
-      <ul>
-        {experiences.map((exp) => (
-          <li key={exp.id}>
-            <Link to={`/experiences/${exp.id}`}>{exp.title}</Link>
-          </li>
-        ))}
-      </ul>
-      <Link to="/">Back to home</Link>
+
+      <section>
+        <h2>What This Tells You</h2>
+        <p>
+          Each experience documents real context, constraints, decisions, and lessons learned.
+          This shows how I work under pressure, what I prioritize, and how I reflect on outcomes.
+        </p>
+      </section>
+
+      <section>
+        <h2>How to Choose</h2>
+        <p>
+          You do not need to read all experiences. Pick 1–2 that are relevant to your context:
+        </p>
+        <ul>
+          <li>For <strong>team collaboration</strong>: University Software Engineering Group Project</li>
+          <li>For <strong>professional work</strong>: First Professional Web Development Role</li>
+          <li>For <strong>scope control</strong>: PoEBoss Companion App or Academic Prioritization</li>
+          <li>For <strong>early execution patterns</strong>: Bug Tracker or Mutudu Todo App</li>
+        </ul>
+        <p>
+          If the fit evaluation already gave you a clear answer, reading experiences may not be necessary.
+        </p>
+      </section>
+
+      <section>
+        <h2>All Experiences</h2>
+        <ul>
+          {experiences.map((exp) => (
+            <li key={exp.id}>
+              <Link to={`/experiences/${exp.id}`}>{exp.title}</Link>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <nav>
+        <Link to="/strengths">If something concerns you, check Strengths and Gaps</Link>
+        <span> | </span>
+        <Link to="/">Back to home</Link>
+      </nav>
     </main>
   )
 }
@@ -112,6 +144,10 @@ function ExperienceDetail({ id }: { id: string }) {
 
       <nav>
         <Link to="/experiences">Back to experiences</Link>
+        <span> | </span>
+        <Link to="/strengths">View related strengths and gaps</Link>
+        <span> | </span>
+        <Link to="/ask">Ask follow-up questions about this experience</Link>
       </nav>
     </main>
   )

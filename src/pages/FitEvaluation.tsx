@@ -145,16 +145,38 @@ export default function FitEvaluation() {
   return (
     <main>
       <h1>Fit Evaluation</h1>
-      <p>
-        This tool helps determine whether a role is a good match based on explicit criteria.
-        The evaluation is deterministic and grounded in my documented strengths and gaps.
-        The goal is to save time for both sides by identifying mismatches early.
-      </p>
+
+      <section>
+        <h2>What This Tells You</h2>
+        <p>
+          This tool provides a deterministic fit assessment based on role characteristics.
+          It is grounded in my documented strengths and gaps. The goal is to save time
+          for both sides by identifying mismatches early.
+        </p>
+      </section>
+
+      <section>
+        <h2>When to Trust the Result</h2>
+        <ul>
+          <li><strong>"Not a Fit"</strong> — Stop here. Further exploration is unlikely to change this.</li>
+          <li><strong>"Strong Fit"</strong> — Proceed with confidence. Explore further only if you have specific concerns.</li>
+          <li><strong>"Partial Fit"</strong> — Review the concerns listed. Check strengths/gaps or specific experiences if concerns are critical to your decision.</li>
+        </ul>
+      </section>
 
       {result ? (
         <>
           <FitResultDisplay result={result} />
           <button onClick={handleReset}>Evaluate Another Role</button>
+          {result.level === 'partial' && (
+            <p>
+              <em>
+                This result is partial. If concerns are critical, check{' '}
+                <Link to="/strengths">Strengths and Gaps</Link> or{' '}
+                <Link to="/experiences">specific experiences</Link> for more context.
+              </em>
+            </p>
+          )}
         </>
       ) : (
         <FitForm onSubmit={handleSubmit} />
@@ -162,6 +184,8 @@ export default function FitEvaluation() {
 
       <nav>
         <Link to="/strengths">View Strengths and Gaps</Link>
+        <span> | </span>
+        <Link to="/ask">Ask follow-up questions</Link>
         <span> | </span>
         <Link to="/">Back to home</Link>
       </nav>

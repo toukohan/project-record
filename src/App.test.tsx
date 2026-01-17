@@ -12,7 +12,7 @@ import FitEvaluation from './pages/FitEvaluation'
 describe('App', () => {
   it('renders without crashing', () => {
     render(<App />)
-    expect(screen.getByRole('heading')).toBeDefined()
+    expect(screen.getByRole('heading', { name: /Capability Discovery Interface/i })).toBeDefined()
   })
 
   it('displays evaluation-focused positioning statement', () => {
@@ -22,17 +22,32 @@ describe('App', () => {
 })
 
 describe('Landing', () => {
-  it('displays two exploration CTAs', () => {
+  it('displays recommended evaluation path', () => {
     render(<MemoryRouter><Landing /></MemoryRouter>)
-    expect(screen.getByText(/Ask about how I work/i)).toBeDefined()
-    expect(screen.getByText(/Check fit for your role/i)).toBeDefined()
+    expect(screen.getByRole('heading', { name: /Recommended Evaluation Path/i })).toBeDefined()
+    expect(screen.getByText(/2–5 minutes/i)).toBeDefined()
+  })
+
+  it('displays evaluation sections with links', () => {
+    render(<MemoryRouter><Landing /></MemoryRouter>)
+    // Multiple mentions of each section exist; verify at least one
+    expect(screen.getAllByText(/Fit Evaluation/i).length).toBeGreaterThan(0)
+    expect(screen.getAllByText(/Strengths and Gaps/i).length).toBeGreaterThan(0)
+    expect(screen.getAllByText(/Experiences/i).length).toBeGreaterThan(0)
+    // Check the ordered list contains the evaluation path
+    expect(screen.getByRole('list')).toBeDefined()
+  })
+
+  it('displays when to stop guidance', () => {
+    render(<MemoryRouter><Landing /></MemoryRouter>)
+    expect(screen.getByRole('heading', { name: /When to Stop/i })).toBeDefined()
   })
 })
 
 describe('Ask', () => {
   it('renders without errors', () => {
     render(<MemoryRouter><Ask /></MemoryRouter>)
-    expect(screen.getByRole('heading')).toBeDefined()
+    expect(screen.getByRole('heading', { name: /Ask About How I Work/i })).toBeDefined()
   })
 
   it('has query input and submit button', () => {
@@ -54,17 +69,34 @@ describe('Ask', () => {
 })
 
 describe('Fit', () => {
-  it('renders without errors', () => {
-    render(<MemoryRouter><Fit /></MemoryRouter>)
-    expect(screen.getByRole('heading')).toBeDefined()
+  it('redirects to fit-evaluation', () => {
+    render(
+      <MemoryRouter initialEntries={['/fit']}>
+        <Routes>
+          <Route path="/fit" element={<Fit />} />
+          <Route path="/fit-evaluation" element={<FitEvaluation />} />
+        </Routes>
+      </MemoryRouter>
+    )
+    // Should redirect to FitEvaluation
+    expect(screen.getByRole('heading', { name: /Fit Evaluation/i })).toBeDefined()
   })
 })
 
 describe('Experiences', () => {
   it('renders experience list', () => {
     render(<MemoryRouter><Experiences /></MemoryRouter>)
-    expect(screen.getByText(/Experience Explorer/i)).toBeDefined()
-    expect(screen.getByText(/University Software Engineering Group Project/i)).toBeDefined()
+    expect(screen.getByRole('heading', { name: /Experience Explorer/i })).toBeDefined()
+    expect(screen.getByRole('heading', { name: /All Experiences/i })).toBeDefined()
+    // Experience appears in the list
+    const experienceLinks = screen.getAllByText(/University Software Engineering Group Project/i)
+    expect(experienceLinks.length).toBeGreaterThan(0)
+  })
+
+  it('renders orientation guidance', () => {
+    render(<MemoryRouter><Experiences /></MemoryRouter>)
+    expect(screen.getByRole('heading', { name: /What This Tells You/i })).toBeDefined()
+    expect(screen.getByRole('heading', { name: /How to Choose/i })).toBeDefined()
   })
 
   it('renders experience detail with all sections', () => {
