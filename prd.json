@@ -80,6 +80,28 @@
         "Run test suite verifying route rendering"
       ],
       "passes": true
-    }
+    },
+    {
+  "id": "exp-001",
+  "title": "Canonical experience data model exists and is validated",
+  "description": "Introduce a structured, typed representation of personal experiences that serves as the single source of truth for future UI rendering and AI grounding.",
+  "acceptance_criteria": [
+    "A canonical experience data model is defined in code (e.g. TypeScript interfaces or schema)",
+    "The model captures: context, constraints, decisions, outcomes, and lessons learned",
+    "At least the three existing experiences are represented using this model",
+    "Experience data is stored in a deterministic, version-controlled format (e.g. TS/JSON)",
+    "The model is imported successfully by application code without runtime errors",
+    "The data model is explicitly documented in code comments or README",
+    "The data model can be extended without breaking existing consumers"
+  ],
+  "verification": [
+    "Typecheck succeeds with the new model",
+    "Application builds successfully after adding the model",
+    "At least one automated test validates the structure or contents of the experience data",
+    "Breaking the model shape causes tests or typecheck to fail"
+  ],
+  "passes": true
+}
+
   ]
 }

@@ -55,6 +55,22 @@ Verified:
 - npm test passes (5 tests)
 - Routes render without errors
 
+## EXP-001: Canonical experience data model ✓
+
+Implemented:
+- Created src/data/experiences.ts with TypeScript interfaces
+- Experience interface captures: context, constraints, decisions, outcomes, lessonsLearned, signals
+- All three experiences from experience_reference.md represented
+- Documented with JSDoc comments explaining structure and extensibility
+- Added getExperienceById helper function
+- Created comprehensive test suite (6 tests)
+
+Verified:
+- npx tsc --noEmit passes
+- npm run build succeeds
+- npm test passes (11 tests total)
+- Breaking model shape causes typecheck and tests to fail
+
 ## Sprint Complete
 
 All PRD requirements now pass.
