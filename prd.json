@@ -145,7 +145,32 @@
     "Break referenced experience data and confirm tests or typecheck fail"
   ],
   "passes": true
+},
+{
+  "id": "fit-001",
+  "title": "Manual fit evaluation tool provides honest alignment assessment",
+  "description": "Provide a deterministic, non-AI fit evaluation tool that helps employers assess alignment based on role characteristics and clearly explains where fit is strong, partial, or weak.",
+  "acceptance_criteria": [
+    "A new route exists for fit evaluation (e.g. /fit-evaluation)",
+    "The page presents a small set of structured inputs describing the role (e.g. role type, domain, team context)",
+    "Inputs are limited and intentional (no free-text job descriptions)",
+    "Submitting the form produces a deterministic fit result",
+    "Possible outcomes include at least: Strong fit, Partial fit, Not a fit",
+    "Each outcome includes a clear explanation grounded in strengths and gaps data",
+    "The tool explicitly advises against proceeding when fit is weak",
+    "No AI or probabilistic logic is used",
+    "Language emphasizes mutual time-saving and alignment, not persuasion"
+  ],
+  "verification": [
+    "Navigate to the fit evaluation route and complete the form with different inputs",
+    "Verify that identical inputs always produce identical results",
+    "Verify that explanations reference strengths and gaps accurately",
+    "Run test suite and confirm fit logic is covered by automated tests",
+    "Break fit logic mapping and confirm tests fail"
+  ],
+  "passes": true
 }
+
 
 
 

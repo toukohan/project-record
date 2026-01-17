@@ -104,6 +104,24 @@ Verified:
 - Evidence IDs reference valid experiences (validated by test)
 - Breaking experience IDs causes tests to fail
 
+## FIT-001: Manual fit evaluation tool ✓
+
+Implemented:
+- Created src/data/fitEvaluation.ts with deterministic fit logic
+- Structured inputs: roleType, teamSize, domainFamiliarity, autonomyLevel
+- Three outcomes: Strong Fit, Partial Fit, Not a Fit
+- Each result includes strengths, concerns, summary, and recommendation
+- "Not a Fit" explicitly advises against proceeding
+- Created src/pages/FitEvaluation.tsx with route /fit-evaluation
+- Form with radio buttons (no free-text)
+- Added 6 logic tests and 3 UI tests
+
+Verified:
+- npm run build succeeds
+- npm test passes (32 tests total)
+- Identical inputs produce identical results (deterministic)
+- Language emphasizes mutual time-saving
+
 ## Sprint Complete
 
 All PRD requirements now pass.

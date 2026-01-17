@@ -7,6 +7,7 @@ import Ask from './pages/Ask'
 import Fit from './pages/Fit'
 import Experiences from './pages/Experiences'
 import Strengths from './pages/Strengths'
+import FitEvaluation from './pages/FitEvaluation'
 
 describe('App', () => {
   it('renders without crashing', () => {
@@ -96,5 +97,26 @@ describe('Strengths', () => {
     render(<MemoryRouter><Strengths /></MemoryRouter>)
     const links = screen.getAllByText(/University Software Engineering Group Project/i)
     expect(links.length).toBeGreaterThan(0)
+  })
+})
+
+describe('FitEvaluation', () => {
+  it('renders form with all input groups', () => {
+    render(<MemoryRouter><FitEvaluation /></MemoryRouter>)
+    expect(screen.getByRole('heading', { name: /Fit Evaluation/i })).toBeDefined()
+    expect(screen.getByText(/Role Type/i)).toBeDefined()
+    expect(screen.getByText(/Team Size/i)).toBeDefined()
+    expect(screen.getByText(/Domain Familiarity/i)).toBeDefined()
+    expect(screen.getByText(/Autonomy Level/i)).toBeDefined()
+  })
+
+  it('has submit button', () => {
+    render(<MemoryRouter><FitEvaluation /></MemoryRouter>)
+    expect(screen.getByRole('button', { name: /Evaluate Fit/i })).toBeDefined()
+  })
+
+  it('links to strengths page', () => {
+    render(<MemoryRouter><FitEvaluation /></MemoryRouter>)
+    expect(screen.getByText(/View Strengths and Gaps/i)).toBeDefined()
   })
 })

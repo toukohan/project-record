@@ -4,6 +4,7 @@ import Ask from './pages/Ask'
 import Fit from './pages/Fit'
 import Experiences from './pages/Experiences'
 import Strengths from './pages/Strengths'
+import FitEvaluation from './pages/FitEvaluation'
 
 export default function App() {
   return (
@@ -15,6 +16,7 @@ export default function App() {
         <Route path="/experiences" element={<Experiences />} />
         <Route path="/experiences/:id" element={<Experiences />} />
         <Route path="/strengths" element={<Strengths />} />
+        <Route path="/fit-evaluation" element={<FitEvaluation />} />
       </Routes>
     </BrowserRouter>
   )
