@@ -34,6 +34,23 @@ describe('Ask', () => {
     render(<MemoryRouter><Ask /></MemoryRouter>)
     expect(screen.getByRole('heading')).toBeDefined()
   })
+
+  it('has query input and submit button', () => {
+    render(<MemoryRouter><Ask /></MemoryRouter>)
+    expect(screen.getByPlaceholderText(/Ask a question/i)).toBeDefined()
+    expect(screen.getByRole('button', { name: /Ask/i })).toBeDefined()
+  })
+
+  it('explains grounded responses', () => {
+    render(<MemoryRouter><Ask /></MemoryRouter>)
+    expect(screen.getByText(/grounded in documented data/i)).toBeDefined()
+  })
+
+  it('links to experiences and strengths', () => {
+    render(<MemoryRouter><Ask /></MemoryRouter>)
+    expect(screen.getByText(/Browse Experiences/i)).toBeDefined()
+    expect(screen.getByText(/View Strengths & Gaps/i)).toBeDefined()
+  })
 })
 
 describe('Fit', () => {

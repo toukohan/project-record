@@ -191,7 +191,7 @@
     "Run test suite including prompt or response snapshot tests",
     "Disable AI or break grounding input and verify tests fail"
   ],
-  "passes": false
+  "passes": true
 }
 
 

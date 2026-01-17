@@ -122,27 +122,35 @@ Verified:
 - Identical inputs produce identical results (deterministic)
 - Language emphasizes mutual time-saving
 
-## AI-001: Grounded AI query interface - BLOCKED
+## AI-001: Grounded AI query interface ✓
 
-Blocking Ambiguity:
-This requirement asks for an "AI-powered query interface" but does not specify:
-1. Which AI provider to use (OpenAI, Anthropic, local model, etc.)
-2. How API keys should be managed (environment variables, secrets service)
-3. Whether a backend is required or if this should use client-side AI
-4. Cost/budget constraints for API calls
-5. Whether a mock/simulated AI is acceptable for MVP
+Clarification received: Option B - deterministic rule-based query interface.
 
-The guiding principles state "static-first, extend later" but an AI interface
-requires external API calls, which is not static.
+Implemented:
+- Created src/data/queryEngine.ts with processQuery() function
+- Intent detection via pattern matching (greeting, experience, strength, gap, decision, lesson, context, fit, out-of-scope)
+- Handlers return grounded responses from canonical experience and strength data
+- Explicit out-of-scope refusal for questions outside grounding context
+- Multi-turn conversation support (history parameter)
+- Follow-up suggestions in responses
+- Upgraded /ask route to use query engine
+- Conversation UI with clear, sources, and suggestions
+- Created comprehensive test suite (13 query engine tests)
 
-Options requiring clarification:
-A) Use a real AI API (requires provider choice, API key setup, possible backend)
-B) Create a simulated rule-based interface that mimics AI behavior
-C) Defer this feature to a later phase
+Key design decisions:
+- Intent detection checks specific intents (decision, lesson, fit) before general ones (experience) to avoid false matches
+- All responses reference canonical data sources
+- No AI API, no backend, no secrets - fully static and deterministic
+- Pattern matching uses regex for flexibility
 
-Requesting direction before proceeding.
+Verified:
+- npm run build succeeds
+- npm test passes (52 tests total)
+- Identical inputs produce identical outputs (deterministic)
+- Out-of-scope questions are refused appropriately
+- Responses match canonical data
 
 ## Sprint Status
 
-7 of 8 PRD requirements pass.
-1 requirement (ai-001) blocked pending clarification.
+All 8 PRD requirements pass.
+Sprint complete.
