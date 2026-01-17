@@ -261,7 +261,32 @@
     "Share URL with a non-technical user and confirm basic usability"
   ],
   "passes": true
+},
+{
+  "id": "ui-003",
+  "title": "Readability-first layout and typography improvements",
+  "description": "Improve text readability and scanning comfort across the site without introducing branding, marketing visuals, or new interaction patterns.",
+  "acceptance_criteria": [
+    "All primary content is constrained to a readable max-width and centered",
+    "Line length does not exceed comfortable reading limits on large screens",
+    "Base font size and line height are increased for long-form reading",
+    "A neutral system font stack is used (no custom or branded fonts)",
+    "Clear visual hierarchy is established using spacing and headings, not color",
+    "Primary CTAs remain visually discoverable without appearing sales-oriented",
+    "No animations, illustrations, gradients, or decorative elements are added",
+    "No new components, routes, or business logic are introduced",
+    "All existing content, copy, and behavior remain unchanged"
+  ],
+  "verification": [
+    "Visually inspect all major routes on desktop viewport (Landing, Experiences, Strengths, Fit Evaluation, Ask)",
+    "Confirm text does not span full screen width on large displays",
+    "Verify long sections are comfortable to read without horizontal scanning",
+    "Run full test suite and confirm no regressions",
+    "Confirm no snapshot or UI tests fail due to content changes"
+  ],
+  "passes": true
 }
+
 
 
 

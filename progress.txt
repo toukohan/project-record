@@ -212,7 +212,25 @@ Verified:
 - All routes render correctly
 - CI pipeline passes
 
+## UI-003: Readability-first typography and layout ✓
+
+Implemented:
+- Created src/index.css with global readability styles
+- Content constrained to 70ch max-width, centered
+- System font stack (no custom fonts)
+- Base font size 18px with 1.6 line-height for comfortable reading
+- Visual hierarchy via spacing and heading sizes, not color
+- Links understated but discoverable (underlined, blue)
+- Form elements styled consistently
+- No animations, gradients, or decorative elements
+- All existing content and behavior unchanged
+
+Verified:
+- npm run build succeeds (CSS bundled)
+- npm test passes (61 tests)
+- No new components or logic introduced
+
 ## Sprint Status
 
-All 11 PRD requirements pass.
+All 12 PRD requirements pass.
 Sprint complete.
