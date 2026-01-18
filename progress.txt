@@ -251,7 +251,21 @@ Verified:
 - npm test passes (61 tests)
 - No new components or logic introduced
 
+## COPY-001: Centralize user-facing copy ✓
+
+Implemented:
+- Created copy.md with all user-facing text from the application
+- Content grouped by page/section (Landing, Experiences, Strengths, Fit Evaluation, Ask)
+- Includes page titles, section headings, body copy, form labels, navigation text
+- Each text block indicates where it appears in the UI
+- No wording changes made - exact copy preserved
+
+Verified:
+- npm run build succeeds
+- npm test passes (61 tests)
+- Application behavior unchanged
+
 ## Sprint Status
 
-All 13 PRD requirements pass.
+All 14 PRD requirements pass.
 Sprint complete.

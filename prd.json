@@ -309,7 +309,28 @@
     "Confirm all existing UI and snapshot tests pass without semantic changes"
   ],
   "passes": true
+},
+{
+  "id": "copy-001",
+  "title": "Centralize all user-facing copy into a single reference file",
+  "description": "Collect all user-facing text content into a single plain-text or markdown file to support tone review, iteration, and external feedback.",
+  "acceptance_criteria": [
+    "All user-facing text from the application is extracted into a single file (e.g. copy.md or copy.txt)",
+    "Content is grouped by page or section (Landing, Experiences, Strengths, Fit, Ask)",
+    "Each section preserves the exact wording currently used in the UI",
+    "No wording is changed as part of this task",
+    "File clearly indicates where each text block appears in the UI",
+    "No new logic, routes, or UI changes are introduced"
+  ],
+  "verification": [
+    "Manually compare UI text against reference file to confirm completeness",
+    "Confirm that all major pages are represented",
+    "Run full test suite to ensure no regressions",
+    "Confirm that application behavior and rendering are unchanged"
+  ],
+  "passes": true
 }
+
 
 
 
