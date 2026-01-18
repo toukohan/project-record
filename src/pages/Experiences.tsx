@@ -8,21 +8,20 @@ function ExperienceList() {
       <h1>{copy.pageTitle}</h1>
 
       <section>
-        <h2>{copy.whatThisTellsYou.heading}</h2>
-        <p>{copy.whatThisTellsYou.content}</p>
+        <h2>{copy.about.heading}</h2>
+        <p>{copy.about.content}</p>
       </section>
 
       <section>
-        <h2>{copy.howToChoose.heading}</h2>
-        <p>{copy.howToChoose.intro}</p>
+        <h2>{copy.byTopic.heading}</h2>
+        <p>{copy.byTopic.intro}</p>
         <ul>
-          {copy.howToChoose.recommendations.map((rec, i) => (
+          {copy.byTopic.topics.map((item, i) => (
             <li key={i}>
-              For <strong>{rec.context}</strong>: {rec.suggestion}
+              <strong>{item.topic}</strong>: {item.suggestion}
             </li>
           ))}
         </ul>
-        <p>{copy.howToChoose.note}</p>
       </section>
 
       <section>
@@ -37,7 +36,7 @@ function ExperienceList() {
       </section>
 
       <nav>
-        <Link to="/strengths">{copy.nav.concernsLink}</Link>
+        <Link to="/strengths">{copy.nav.strengthsLink}</Link>
         <span> | </span>
         <Link to="/">{copy.nav.backToHome}</Link>
       </nav>
@@ -144,7 +143,7 @@ function ExperienceDetail({ id }: { id: string }) {
         <span> | </span>
         <Link to="/strengths">{copy.detail.nav.viewStrengths}</Link>
         <span> | </span>
-        <Link to="/ask">{copy.detail.nav.askFollowUp}</Link>
+        <Link to="/ask">{copy.detail.nav.askAbout}</Link>
       </nav>
     </main>
   )

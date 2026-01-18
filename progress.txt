@@ -310,7 +310,30 @@ Verified:
 - No other pages modified
 - copy.md updated to match
 
+## COPY-004: Align Experiences page copy with Project Record tone ✓
+
+Implemented:
+- Synced landing copy with user's changes (Contents heading, updated Not a Fit description)
+- Changed title from "Experience Explorer" to "Project Experiences"
+- Changed "What This Tells You" to "About These Records"
+- Changed "How to Choose" to "By Topic"
+- Removed first-person language ("how I work", "what I prioritize")
+- Removed directive language ("pick", "you do not need to", "may not be necessary")
+- Changed navigation text to neutral labels ("Strengths and Gaps" instead of "If something concerns you, check...")
+- Updated detail nav: "Ask about this experience" instead of "Ask follow-up questions"
+- Updated tests and copy.md to match
+
+Key decisions:
+- Preserved same structure (intro, topic grouping, all experiences list)
+- Topic groupings now just state "theme: suggestions" without "For" prefix
+- Navigation links are now just labels, not instructions
+
+Verified:
+- npm test passes (61 tests)
+- npm run build succeeds
+- copy.md updated
+
 ## Sprint Status
 
-All 17 PRD requirements pass.
+All 18 PRD requirements pass.
 Sprint complete.

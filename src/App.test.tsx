@@ -22,9 +22,9 @@ describe('App', () => {
 })
 
 describe('Landing', () => {
-  it('displays available views section', () => {
+  it('displays contents section', () => {
     render(<MemoryRouter><Landing /></MemoryRouter>)
-    expect(screen.getByRole('heading', { name: /Available Views/i })).toBeDefined()
+    expect(screen.getByRole('heading', { name: /Contents/i })).toBeDefined()
   })
 
   it('displays section links', () => {
@@ -84,17 +84,17 @@ describe('Fit', () => {
 describe('Experiences', () => {
   it('renders experience list', () => {
     render(<MemoryRouter><Experiences /></MemoryRouter>)
-    expect(screen.getByRole('heading', { name: /Experience Explorer/i })).toBeDefined()
+    expect(screen.getByRole('heading', { name: /Project Experiences/i })).toBeDefined()
     expect(screen.getByRole('heading', { name: /All Experiences/i })).toBeDefined()
     // Experience appears in the list
     const experienceLinks = screen.getAllByText(/University Software Engineering Group Project/i)
     expect(experienceLinks.length).toBeGreaterThan(0)
   })
 
-  it('renders orientation guidance', () => {
+  it('renders record-oriented guidance', () => {
     render(<MemoryRouter><Experiences /></MemoryRouter>)
-    expect(screen.getByRole('heading', { name: /What This Tells You/i })).toBeDefined()
-    expect(screen.getByRole('heading', { name: /How to Choose/i })).toBeDefined()
+    expect(screen.getByRole('heading', { name: /About These Records/i })).toBeDefined()
+    expect(screen.getByRole('heading', { name: /By Topic/i })).toBeDefined()
   })
 
   it('renders experience detail with all sections', () => {

@@ -375,7 +375,32 @@
     "Confirm copy changes are reflected in copy.md"
   ],
   "passes": true
+},
+{
+  "id": "copy-004",
+  "title": "Align Experiences page copy with Project Record tone",
+  "description": "Rewrite the Experiences page introductory and guidance copy to match the neutral, inspectable 'Project Record' framing established on the landing page.",
+  "acceptance_criteria": [
+    "Experiences page title and introductory text use neutral, record-oriented language",
+    "Copy frames experiences as documented project records rather than demonstrations or explanations of the author",
+    "First-person language is avoided where possible and removed from framing sections",
+    "Language is descriptive and observational, not evaluative or persuasive",
+    "No instructions or recommendations are given to the reader (e.g. 'pick', 'check', 'you should')",
+    "Existing structure, routes, and experience content remain unchanged",
+    "Section purpose is explained in terms of what information is present, not what conclusions to draw",
+    "Tone matches the calm, factual style of the updated landing page",
+    "No new UI elements, features, or navigation paths are introduced"
+  ],
+  "verification": [
+    "Manually review Experiences page intro and guidance sections for imperative or self-centered language",
+    "Confirm experience detail pages remain unchanged except for framing text if applicable",
+    "Verify that the page reads as a neutral record when read independently of the landing page",
+    "Run full test suite and confirm no regressions",
+    "Confirm updated copy is reflected in copy.md"
+  ],
+  "passes": true
 }
+
 
 
 

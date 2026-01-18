@@ -17,7 +17,7 @@ The materials here are available for inspection. They document what was built, h
 
 ### Available Views
 
-**Section heading:** Available Views
+**Section heading:** Contents
 
 **Fit Evaluation**
 - Link text: Fit Evaluation
@@ -39,7 +39,7 @@ The materials here are available for inspection. They document what was built, h
 
 **Section heading:** Fit Outcomes
 
-- **Not a Fit** — Clear misalignment. The fit evaluation explains why.
+- **Not a Fit** — Clear misalignment based on documented constraints.
 - **Strong Fit** — Good alignment with documented strengths.
 - **Partial Fit** — Some alignment, with specific concerns noted.
 
@@ -48,26 +48,24 @@ The materials here are available for inspection. They document what was built, h
 ## Experiences Page (`/experiences`)
 
 ### Page Title
-Experience Explorer
+Project Experiences
 
-### What This Tells You
-Each experience documents real context, constraints, decisions, and lessons learned. This shows how I work under pressure, what I prioritize, and how I reflect on outcomes.
+### About These Records
+Each experience documents a real project with its context, constraints, decisions made, outcomes observed, and lessons drawn afterward.
 
-### How to Choose
-You do not need to read all experiences. Pick 1–2 that are relevant to your context:
+### By Topic
+Experiences grouped by primary theme:
 
-- For **team collaboration**: University Software Engineering Group Project
-- For **professional work**: First Professional Web Development Role
-- For **scope control**: PoEBoss Companion App or Academic Prioritization
-- For **early execution patterns**: Bug Tracker or Mutudu Todo App
-
-If the fit evaluation already gave you a clear answer, reading experiences may not be necessary.
+- **Team collaboration**: University Software Engineering Group Project
+- **Professional work**: First Professional Web Development Role
+- **Scope control**: PoEBoss Companion App, Academic Prioritization
+- **Early execution patterns**: Bug Tracker, Mutudu Todo App
 
 ### All Experiences (section heading)
 All Experiences
 
 ### Navigation
-- If something concerns you, check Strengths and Gaps
+- Strengths and Gaps
 - Back to home
 
 ### Experience Detail Page
@@ -86,8 +84,8 @@ All Experiences
 
 **Navigation:**
 - Back to experiences
-- View related strengths and gaps
-- Ask follow-up questions about this experience
+- Related strengths and gaps
+- Ask about this experience
 
 **Not Found:**
 - Experience Not Found

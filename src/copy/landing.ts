@@ -14,7 +14,7 @@ export const landing = {
   },
 
   sections: {
-    heading: 'Available Views',
+    heading: 'Contents',
     items: [
       {
         linkText: 'Fit Evaluation',
@@ -48,7 +48,7 @@ export const landing = {
     items: [
       {
         label: 'Not a Fit',
-        description: 'Clear misalignment. The fit evaluation explains why.',
+        description: 'Clear misalignment based on documented constraints.',
       },
       {
         label: 'Strong Fit',
