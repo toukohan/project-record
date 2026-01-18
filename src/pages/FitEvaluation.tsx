@@ -14,6 +14,7 @@ import {
   type AutonomyLevel,
   type FitResult,
 } from '../data/fitEvaluation'
+import { fitEvaluation as copy } from '../copy/fitEvaluation'
 
 function FitForm({ onSubmit }: { onSubmit: (inputs: RoleInputs) => void }) {
   const [roleType, setRoleType] = useState<RoleType>('individual-contributor')
@@ -29,7 +30,7 @@ function FitForm({ onSubmit }: { onSubmit: (inputs: RoleInputs) => void }) {
   return (
     <form onSubmit={handleSubmit}>
       <fieldset>
-        <legend>Role Type</legend>
+        <legend>{copy.form.roleType}</legend>
         {(Object.keys(roleTypeLabels) as RoleType[]).map((key) => (
           <label key={key}>
             <input
@@ -45,7 +46,7 @@ function FitForm({ onSubmit }: { onSubmit: (inputs: RoleInputs) => void }) {
       </fieldset>
 
       <fieldset>
-        <legend>Team Size</legend>
+        <legend>{copy.form.teamSize}</legend>
         {(Object.keys(teamSizeLabels) as TeamSize[]).map((key) => (
           <label key={key}>
             <input
@@ -61,7 +62,7 @@ function FitForm({ onSubmit }: { onSubmit: (inputs: RoleInputs) => void }) {
       </fieldset>
 
       <fieldset>
-        <legend>Domain Familiarity</legend>
+        <legend>{copy.form.domainFamiliarity}</legend>
         {(Object.keys(domainLabels) as DomainFamiliarity[]).map((key) => (
           <label key={key}>
             <input
@@ -77,7 +78,7 @@ function FitForm({ onSubmit }: { onSubmit: (inputs: RoleInputs) => void }) {
       </fieldset>
 
       <fieldset>
-        <legend>Autonomy Level</legend>
+        <legend>{copy.form.autonomyLevel}</legend>
         {(Object.keys(autonomyLabels) as AutonomyLevel[]).map((key) => (
           <label key={key}>
             <input
@@ -92,7 +93,7 @@ function FitForm({ onSubmit }: { onSubmit: (inputs: RoleInputs) => void }) {
         ))}
       </fieldset>
 
-      <button type="submit">Evaluate Fit</button>
+      <button type="submit">{copy.form.submitButton}</button>
     </form>
   )
 }
@@ -105,7 +106,7 @@ function FitResultDisplay({ result }: { result: FitResult }) {
 
       {result.strengths.length > 0 && (
         <>
-          <h3>Alignment Points</h3>
+          <h3>{copy.result.alignmentHeading}</h3>
           <ul>
             {result.strengths.map((s, i) => (
               <li key={i}>{s}</li>
@@ -116,7 +117,7 @@ function FitResultDisplay({ result }: { result: FitResult }) {
 
       {result.concerns.length > 0 && (
         <>
-          <h3>Concerns</h3>
+          <h3>{copy.result.concernsHeading}</h3>
           <ul>
             {result.concerns.map((c, i) => (
               <li key={i}>{c}</li>
@@ -125,7 +126,7 @@ function FitResultDisplay({ result }: { result: FitResult }) {
         </>
       )}
 
-      <h3>Recommendation</h3>
+      <h3>{copy.result.recommendationHeading}</h3>
       <p>{result.recommendation}</p>
     </section>
   )
@@ -144,36 +145,36 @@ export default function FitEvaluation() {
 
   return (
     <main>
-      <h1>Fit Evaluation</h1>
+      <h1>{copy.pageTitle}</h1>
 
       <section>
-        <h2>What This Tells You</h2>
-        <p>
-          This tool provides a deterministic fit assessment based on role characteristics.
-          It is grounded in my documented strengths and gaps. The goal is to save time
-          for both sides by identifying mismatches early.
-        </p>
+        <h2>{copy.whatThisTellsYou.heading}</h2>
+        <p>{copy.whatThisTellsYou.content}</p>
       </section>
 
       <section>
-        <h2>When to Trust the Result</h2>
+        <h2>{copy.whenToTrust.heading}</h2>
         <ul>
-          <li><strong>"Not a Fit"</strong> — Stop here. Further exploration is unlikely to change this.</li>
-          <li><strong>"Strong Fit"</strong> — Proceed with confidence. Explore further only if you have specific concerns.</li>
-          <li><strong>"Partial Fit"</strong> — Review the concerns listed. Check strengths/gaps or specific experiences if concerns are critical to your decision.</li>
+          {copy.whenToTrust.items.map((item, i) => (
+            <li key={i}>
+              <strong>{item.label}</strong> — {item.description}
+            </li>
+          ))}
         </ul>
       </section>
 
       {result ? (
         <>
           <FitResultDisplay result={result} />
-          <button onClick={handleReset}>Evaluate Another Role</button>
+          <button onClick={handleReset}>{copy.result.evaluateAnother}</button>
           {result.level === 'partial' && (
             <p>
               <em>
-                This result is partial. If concerns are critical, check{' '}
-                <Link to="/strengths">Strengths and Gaps</Link> or{' '}
-                <Link to="/experiences">specific experiences</Link> for more context.
+                {copy.result.partialNote.split('Strengths and Gaps')[0]}
+                <Link to="/strengths">Strengths and Gaps</Link>
+                {copy.result.partialNote.split('Strengths and Gaps')[1].split('specific experiences')[0]}
+                <Link to="/experiences">specific experiences</Link>
+                {copy.result.partialNote.split('specific experiences')[1]}
               </em>
             </p>
           )}
@@ -183,11 +184,11 @@ export default function FitEvaluation() {
       )}
 
       <nav>
-        <Link to="/strengths">View Strengths and Gaps</Link>
+        <Link to="/strengths">{copy.nav.viewStrengths}</Link>
         <span> | </span>
-        <Link to="/ask">Ask follow-up questions</Link>
+        <Link to="/ask">{copy.nav.askFollowUp}</Link>
         <span> | </span>
-        <Link to="/">Back to home</Link>
+        <Link to="/">{copy.nav.backToHome}</Link>
       </nav>
     </main>
   )

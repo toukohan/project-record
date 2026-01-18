@@ -1,39 +1,34 @@
 import { Link, useParams } from 'react-router-dom'
-import { experiences, getExperienceById } from '../data/experiences'
+import { experiences as experienceData, getExperienceById } from '../data/experiences'
+import { experiences as copy } from '../copy/experiences'
 
 function ExperienceList() {
   return (
     <main>
-      <h1>Experience Explorer</h1>
+      <h1>{copy.pageTitle}</h1>
 
       <section>
-        <h2>What This Tells You</h2>
-        <p>
-          Each experience documents real context, constraints, decisions, and lessons learned.
-          This shows how I work under pressure, what I prioritize, and how I reflect on outcomes.
-        </p>
+        <h2>{copy.whatThisTellsYou.heading}</h2>
+        <p>{copy.whatThisTellsYou.content}</p>
       </section>
 
       <section>
-        <h2>How to Choose</h2>
-        <p>
-          You do not need to read all experiences. Pick 1–2 that are relevant to your context:
-        </p>
+        <h2>{copy.howToChoose.heading}</h2>
+        <p>{copy.howToChoose.intro}</p>
         <ul>
-          <li>For <strong>team collaboration</strong>: University Software Engineering Group Project</li>
-          <li>For <strong>professional work</strong>: First Professional Web Development Role</li>
-          <li>For <strong>scope control</strong>: PoEBoss Companion App or Academic Prioritization</li>
-          <li>For <strong>early execution patterns</strong>: Bug Tracker or Mutudu Todo App</li>
+          {copy.howToChoose.recommendations.map((rec, i) => (
+            <li key={i}>
+              For <strong>{rec.context}</strong>: {rec.suggestion}
+            </li>
+          ))}
         </ul>
-        <p>
-          If the fit evaluation already gave you a clear answer, reading experiences may not be necessary.
-        </p>
+        <p>{copy.howToChoose.note}</p>
       </section>
 
       <section>
-        <h2>All Experiences</h2>
+        <h2>{copy.allExperiences.heading}</h2>
         <ul>
-          {experiences.map((exp) => (
+          {experienceData.map((exp) => (
             <li key={exp.id}>
               <Link to={`/experiences/${exp.id}`}>{exp.title}</Link>
             </li>
@@ -42,9 +37,9 @@ function ExperienceList() {
       </section>
 
       <nav>
-        <Link to="/strengths">If something concerns you, check Strengths and Gaps</Link>
+        <Link to="/strengths">{copy.nav.concernsLink}</Link>
         <span> | </span>
-        <Link to="/">Back to home</Link>
+        <Link to="/">{copy.nav.backToHome}</Link>
       </nav>
     </main>
   )
@@ -56,18 +51,20 @@ function ExperienceDetail({ id }: { id: string }) {
   if (!experience) {
     return (
       <main>
-        <h1>Experience Not Found</h1>
-        <Link to="/experiences">Back to experiences</Link>
+        <h1>{copy.notFound.heading}</h1>
+        <Link to="/experiences">{copy.notFound.backLink}</Link>
       </main>
     )
   }
+
+  const headings = copy.detail.sectionHeadings
 
   return (
     <main>
       <h1>{experience.title}</h1>
 
       <section>
-        <h2>Context</h2>
+        <h2>{headings.context}</h2>
         <ul>
           {experience.context.map((item, i) => (
             <li key={i}>{item}</li>
@@ -76,7 +73,7 @@ function ExperienceDetail({ id }: { id: string }) {
       </section>
 
       <section>
-        <h2>Constraints</h2>
+        <h2>{headings.constraints}</h2>
         <ul>
           {experience.constraints.map((item, i) => (
             <li key={i}>{item}</li>
@@ -85,10 +82,10 @@ function ExperienceDetail({ id }: { id: string }) {
       </section>
 
       <section>
-        <h2>Decisions</h2>
+        <h2>{headings.decisions}</h2>
         {experience.decisions.map((decision, i) => (
           <div key={i}>
-            {decision.tension && <p><strong>Tension:</strong> {decision.tension}</p>}
+            {decision.tension && <p><strong>{headings.tension}</strong> {decision.tension}</p>}
             <ul>
               {decision.choice.map((choice, j) => (
                 <li key={j}>{choice}</li>
@@ -99,7 +96,7 @@ function ExperienceDetail({ id }: { id: string }) {
       </section>
 
       <section>
-        <h2>Outcomes</h2>
+        <h2>{headings.outcomes}</h2>
         <ul>
           {experience.outcomes.map((item, i) => (
             <li key={i}>{item}</li>
@@ -108,8 +105,8 @@ function ExperienceDetail({ id }: { id: string }) {
       </section>
 
       <section>
-        <h2>Lessons Learned</h2>
-        <h3>What Worked</h3>
+        <h2>{headings.lessonsLearned}</h2>
+        <h3>{headings.whatWorked}</h3>
         <ul>
           {experience.lessonsLearned.whatWorked.map((item, i) => (
             <li key={i}>{item}</li>
@@ -117,7 +114,7 @@ function ExperienceDetail({ id }: { id: string }) {
         </ul>
         {experience.lessonsLearned.whatDidnt.length > 0 && (
           <>
-            <h3>What Didn't Work</h3>
+            <h3>{headings.whatDidnt}</h3>
             <ul>
               {experience.lessonsLearned.whatDidnt.map((item, i) => (
                 <li key={i}>{item}</li>
@@ -125,7 +122,7 @@ function ExperienceDetail({ id }: { id: string }) {
             </ul>
           </>
         )}
-        <h3>What I'd Do Differently</h3>
+        <h3>{headings.whatIdDoDifferently}</h3>
         <ul>
           {experience.lessonsLearned.whatIdDoDifferently.map((item, i) => (
             <li key={i}>{item}</li>
@@ -134,7 +131,7 @@ function ExperienceDetail({ id }: { id: string }) {
       </section>
 
       <section>
-        <h2>Signals Demonstrated</h2>
+        <h2>{headings.signals}</h2>
         <ul>
           {experience.signals.map((item, i) => (
             <li key={i}>{item}</li>
@@ -143,11 +140,11 @@ function ExperienceDetail({ id }: { id: string }) {
       </section>
 
       <nav>
-        <Link to="/experiences">Back to experiences</Link>
+        <Link to="/experiences">{copy.detail.nav.backToExperiences}</Link>
         <span> | </span>
-        <Link to="/strengths">View related strengths and gaps</Link>
+        <Link to="/strengths">{copy.detail.nav.viewStrengths}</Link>
         <span> | </span>
-        <Link to="/ask">Ask follow-up questions about this experience</Link>
+        <Link to="/ask">{copy.detail.nav.askFollowUp}</Link>
       </nav>
     </main>
   )

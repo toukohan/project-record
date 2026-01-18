@@ -265,7 +265,28 @@ Verified:
 - npm test passes (61 tests)
 - Application behavior unchanged
 
+## COPY-002: Modularize user-facing copy ✓
+
+Implemented:
+- Created src/copy/ directory with page-scoped copy modules
+- Created landing.ts, experiences.ts, strengths.ts, fitEvaluation.ts, ask.ts
+- Each module exports plain strings and structured objects (no logic, no functions)
+- Refactored all page components to import copy from their corresponding modules
+- Fixed TypeScript errors (unused imports, missing vite-env.d.ts)
+- Existing wording preserved exactly as-is
+- copy.md remains as human-review artifact
+
+Architecture decisions:
+- Copy objects use nested structure for organization (e.g., whatThisTellsYou.heading, whatThisTellsYou.content)
+- Link text stored in copy, but Link components still handle routing in JSX
+- Small formatting elements (em dash, For prefix) kept in JSX as they are structural, not copy
+
+Verified:
+- npx tsc --noEmit passes
+- npm test passes (61 tests)
+- npm run build succeeds
+
 ## Sprint Status
 
-All 15 PRD requirements pass.
+All 16 PRD requirements pass.
 Sprint complete.

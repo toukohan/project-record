@@ -9,7 +9,7 @@
  */
 
 import { experiences, type Experience } from './experiences'
-import { strengthItems, categoryLabels, type StrengthCategory } from './strengths'
+import { strengthItems, categoryLabels } from './strengths'
 
 export interface QueryResponse {
   answer: string
@@ -245,7 +245,7 @@ function handleDecisionQuery(question: string): QueryResponse {
   }
 }
 
-function handleLessonQuery(question: string): QueryResponse {
+function handleLessonQuery(_question: string): QueryResponse {
   // Aggregate lessons from all experiences
   const allLessons = experiences.flatMap((exp) => ({
     experience: exp.title,

@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom'
 import {
-  strengthItems,
   getStrengthsByCategory,
   getEvidenceForStrength,
   categoryLabels,
   type StrengthCategory,
 } from '../data/strengths'
+import { strengths as copy } from '../copy/strengths'
 
 function StrengthSection({ category }: { category: StrengthCategory }) {
   const items = getStrengthsByCategory(category)
@@ -24,7 +24,7 @@ function StrengthSection({ category }: { category: StrengthCategory }) {
               <p>{item.description}</p>
               {evidence.length > 0 && (
                 <p>
-                  Evidence:{' '}
+                  {copy.evidenceLabel}{' '}
                   {evidence.map((exp, i) => (
                     <span key={exp.id}>
                       <Link to={`/experiences/${exp.id}`}>{exp.title}</Link>
@@ -44,31 +44,24 @@ function StrengthSection({ category }: { category: StrengthCategory }) {
 export default function Strengths() {
   return (
     <main>
-      <h1>Strengths and Gaps</h1>
+      <h1>{copy.pageTitle}</h1>
 
       <section>
-        <h2>What This Tells You</h2>
-        <p>
-          This is an honest assessment of where I can contribute and where I cannot.
-          Each strength links to experiences that demonstrate it.
-          Gaps are stated plainly without hedging.
-        </p>
+        <h2>{copy.whatThisTellsYou.heading}</h2>
+        <p>{copy.whatThisTellsYou.content}</p>
       </section>
 
       <section>
-        <h2>How to Use This</h2>
-        <p>
-          Compare these against your role requirements:
-        </p>
+        <h2>{copy.howToUse.heading}</h2>
+        <p>{copy.howToUse.intro}</p>
         <ul>
-          <li><strong>Strong</strong> items indicate reliable contribution areas</li>
-          <li><strong>Developing</strong> items show growth potential with guidance</li>
-          <li><strong>Not my strength yet</strong> items are gaps that may disqualify the fit</li>
+          {copy.howToUse.items.map((item, i) => (
+            <li key={i}>
+              <strong>{item.label}</strong> {item.description}
+            </li>
+          ))}
         </ul>
-        <p>
-          If a gap matches a critical requirement for your role, this is likely not a fit.
-          If strengths align with your needs and gaps are acceptable, proceed to the fit evaluation.
-        </p>
+        <p>{copy.howToUse.conclusion}</p>
       </section>
 
       <StrengthSection category="strong" />
@@ -76,11 +69,11 @@ export default function Strengths() {
       <StrengthSection category="notMyStrength" />
 
       <nav>
-        <Link to="/fit-evaluation">Check fit for your specific role</Link>
+        <Link to="/fit-evaluation">{copy.nav.checkFit}</Link>
         <span> | </span>
-        <Link to="/experiences">See experiences that demonstrate these patterns</Link>
+        <Link to="/experiences">{copy.nav.seeExperiences}</Link>
         <span> | </span>
-        <Link to="/">Back to home</Link>
+        <Link to="/">{copy.nav.backToHome}</Link>
       </nav>
     </main>
   )

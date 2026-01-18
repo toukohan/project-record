@@ -1,53 +1,51 @@
 import { Link } from 'react-router-dom'
+import { landing } from '../copy/landing'
 
 export default function Landing() {
   return (
     <main>
-      <h1>Capability Discovery Interface</h1>
+      <h1>{landing.pageTitle}</h1>
 
-      <p>
-        This interface helps you decide whether I can contribute to your team,
-        learn your domain, and deliver under real constraints.
-      </p>
+      <p>{landing.intro.paragraph1}</p>
 
-      <p>
-        Instead of claims, you can investigate. Instead of filtering, you can explore.
-      </p>
+      <p>{landing.intro.paragraph2}</p>
 
       <section>
-        <h2>Recommended Evaluation Path</h2>
-        <p>Most evaluations take 2–5 minutes.</p>
+        <h2>{landing.evaluationPath.heading}</h2>
+        <p>{landing.evaluationPath.leadIn}</p>
 
         <ol className="evaluation-steps">
           <li>
-            <Link to="/fit-evaluation"><strong>Fit Evaluation</strong></Link>
+            <Link to="/fit-evaluation"><strong>{landing.evaluationPath.steps[0].linkText}</strong></Link>
             <br />
-            <span>Answer 4 questions. Get a clear fit assessment. Often sufficient to decide.</span>
+            <span>{landing.evaluationPath.steps[0].description}</span>
           </li>
           <li>
-            <Link to="/strengths"><strong>Strengths and Gaps</strong></Link>
+            <Link to="/strengths"><strong>{landing.evaluationPath.steps[1].linkText}</strong></Link>
             <br />
-            <span>Explicit capabilities and limitations. Check if fit is partial.</span>
+            <span>{landing.evaluationPath.steps[1].description}</span>
           </li>
           <li>
-            <Link to="/experiences"><strong>Experiences</strong></Link>
+            <Link to="/experiences"><strong>{landing.evaluationPath.steps[2].linkText}</strong></Link>
             <br />
-            <span>Read 1–2 relevant experiences. Not all are required.</span>
+            <span>{landing.evaluationPath.steps[2].description}</span>
           </li>
           <li>
-            <Link to="/ask"><strong>Ask</strong></Link>
+            <Link to="/ask"><strong>{landing.evaluationPath.steps[3].linkText}</strong></Link>
             <br />
-            <span>Query specific decisions or reasoning. Best for follow-up.</span>
+            <span>{landing.evaluationPath.steps[3].description}</span>
           </li>
         </ol>
       </section>
 
       <section>
-        <h2>When to Stop</h2>
+        <h2>{landing.whenToStop.heading}</h2>
         <ul>
-          <li><strong>"Not a Fit"</strong> — You have enough information. Stop here.</li>
-          <li><strong>"Strong Fit"</strong> — Proceed directly. No further exploration needed.</li>
-          <li><strong>"Partial Fit"</strong> — Check concerns in Strengths or Experiences.</li>
+          {landing.whenToStop.items.map((item, i) => (
+            <li key={i}>
+              <strong>{item.label}</strong> — {item.description}
+            </li>
+          ))}
         </ul>
       </section>
     </main>

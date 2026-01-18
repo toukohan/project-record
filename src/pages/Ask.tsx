@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { processQuery, type ConversationTurn } from '../data/queryEngine'
+import { ask as copy } from '../copy/ask'
 
 export default function Ask() {
   const [question, setQuestion] = useState('')
@@ -23,36 +24,35 @@ export default function Ask() {
 
   return (
     <main>
-      <h1>Ask About How I Work</h1>
+      <h1>{copy.pageTitle}</h1>
 
       <section>
-        <h2>What This Tells You</h2>
-        <p>
-          This interface answers questions about my experiences, decisions, strengths, and gaps.
-          All responses are grounded in documented data—no generated claims, no speculation.
-        </p>
+        <h2>{copy.whatThisTellsYou.heading}</h2>
+        <p>{copy.whatThisTellsYou.content}</p>
       </section>
 
       <section>
-        <h2>What You Can Ask</h2>
+        <h2>{copy.whatYouCanAsk.heading}</h2>
         <ul>
-          <li>Questions about specific experiences (e.g., "Tell me about the university project")</li>
-          <li>Questions about decisions and tradeoffs (e.g., "Why did you scope down?")</li>
-          <li>Questions about strengths and gaps (e.g., "What are your weaknesses?")</li>
-          <li>Questions about fit for a role type (e.g., "Would you fit a management role?")</li>
+          {copy.whatYouCanAsk.items.map((item, i) => (
+            <li key={i}>{item}</li>
+          ))}
         </ul>
       </section>
 
       <section>
-        <h2>What It Cannot Answer</h2>
+        <h2>{copy.whatItCannotAnswer.heading}</h2>
         <ul>
-          <li>Questions outside documented experiences</li>
-          <li>Speculative or hypothetical scenarios</li>
-          <li>Topics unrelated to professional capability</li>
+          {copy.whatItCannotAnswer.items.map((item, i) => (
+            <li key={i}>{item}</li>
+          ))}
         </ul>
         <p>
-          If you get an "out of scope" response, try the <Link to="/fit-evaluation">Fit Evaluation</Link>{' '}
-          or browse <Link to="/experiences">Experiences</Link> directly.
+          {copy.whatItCannotAnswer.note.split('Fit Evaluation')[0]}
+          <Link to="/fit-evaluation">Fit Evaluation</Link>
+          {copy.whatItCannotAnswer.note.split('Fit Evaluation')[1].split('Experiences')[0]}
+          <Link to="/experiences">Experiences</Link>
+          {copy.whatItCannotAnswer.note.split('Experiences')[1]}
         </p>
       </section>
 
@@ -60,14 +60,14 @@ export default function Ask() {
         <section>
           {conversation.map((turn, i) => (
             <div key={i}>
-              <p><strong>You:</strong> {turn.question}</p>
+              <p><strong>{copy.conversation.youLabel}</strong> {turn.question}</p>
               <div>
                 <p style={{ whiteSpace: 'pre-wrap' }}>{turn.response.answer}</p>
                 {turn.response.sources.length > 0 && (
-                  <p><em>Sources: {turn.response.sources.join(', ')}</em></p>
+                  <p><em>{copy.conversation.sourcesLabel} {turn.response.sources.join(', ')}</em></p>
                 )}
                 {turn.response.followUp && (
-                  <p><em>Suggestion: {turn.response.followUp}</em></p>
+                  <p><em>{copy.conversation.suggestionLabel} {turn.response.followUp}</em></p>
                 )}
               </div>
               <hr />
@@ -81,23 +81,23 @@ export default function Ask() {
           type="text"
           value={question}
           onChange={(e) => setQuestion(e.target.value)}
-          placeholder="Ask a question..."
-          aria-label="Your question"
+          placeholder={copy.form.placeholder}
+          aria-label={copy.form.ariaLabel}
         />
-        <button type="submit">Ask</button>
+        <button type="submit">{copy.form.submitButton}</button>
         {conversation.length > 0 && (
           <button type="button" onClick={handleClear}>
-            Clear Conversation
+            {copy.form.clearButton}
           </button>
         )}
       </form>
 
       <nav>
-        <Link to="/experiences">Browse Experiences</Link>
+        <Link to="/experiences">{copy.nav.browseExperiences}</Link>
         <span> | </span>
-        <Link to="/strengths">View Strengths & Gaps</Link>
+        <Link to="/strengths">{copy.nav.viewStrengths}</Link>
         <span> | </span>
-        <Link to="/">Back to home</Link>
+        <Link to="/">{copy.nav.backToHome}</Link>
       </nav>
     </main>
   )

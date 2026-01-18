@@ -8,8 +8,6 @@
  * alignment with known strengths and gaps.
  */
 
-import { strengthItems, type StrengthCategory } from './strengths'
-
 export type RoleType = 'individual-contributor' | 'tech-lead' | 'manager'
 export type TeamSize = 'small' | 'medium' | 'large'
 export type DomainFamiliarity = 'familiar' | 'adjacent' | 'new'

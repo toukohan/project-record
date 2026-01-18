@@ -329,7 +329,30 @@
     "Confirm that application behavior and rendering are unchanged"
   ],
   "passes": true
+},
+{
+  "id": "copy-002",
+  "title": "Modularize user-facing copy into single-source-of-truth files",
+  "description": "Refactor user-facing text into centralized, page-scoped copy modules to make tone iteration and wording changes easy, safe, and reviewable over time.",
+  "acceptance_criteria": [
+    "All user-facing copy is moved out of JSX and into dedicated copy modules",
+    "Each primary page has a corresponding copy file (landing, experiences, strengths, fit, ask)",
+    "Copy modules export plain strings or simple structured objects only (no logic, no functions)",
+    "UI components import copy explicitly from their corresponding copy modules",
+    "No copy is duplicated across files",
+    "Existing wording is preserved exactly as-is during this refactor",
+    "The centralized copy structure makes it possible to change wording by editing a single file per page",
+    "copy.md remains as a human-review artifact and is not used as a runtime source"
+  ],
+  "verification": [
+    "Manually verify that all visible text in the UI originates from copy modules",
+    "Search codebase to confirm no user-facing strings remain hardcoded in components",
+    "Run full test suite and confirm no regressions",
+    "Confirm application behavior and rendering are unchanged"
+  ],
+  "passes": true
 }
+
 
 
 
