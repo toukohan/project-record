@@ -126,7 +126,7 @@ function FitResultDisplay({ result }: { result: FitResult }) {
         </>
       )}
 
-      <h3>{copy.result.recommendationHeading}</h3>
+      <h3>{copy.result.analysisHeading}</h3>
       <p>{result.recommendation}</p>
     </section>
   )
@@ -148,16 +148,16 @@ export default function FitEvaluation() {
       <h1>{copy.pageTitle}</h1>
 
       <section>
-        <h2>{copy.whatThisTellsYou.heading}</h2>
-        <p>{copy.whatThisTellsYou.content}</p>
+        <h2>{copy.about.heading}</h2>
+        <p>{copy.about.content}</p>
       </section>
 
       <section>
-        <h2>{copy.whenToTrust.heading}</h2>
+        <h2>{copy.outputLabels.heading}</h2>
         <ul>
-          {copy.whenToTrust.items.map((item, i) => (
+          {copy.outputLabels.items.map((item, i) => (
             <li key={i}>
-              <strong>{item.label}</strong> — {item.description}
+              <strong>{item.label}</strong>: {item.description}
             </li>
           ))}
         </ul>
@@ -168,15 +168,7 @@ export default function FitEvaluation() {
           <FitResultDisplay result={result} />
           <button onClick={handleReset}>{copy.result.evaluateAnother}</button>
           {result.level === 'partial' && (
-            <p>
-              <em>
-                {copy.result.partialNote.split('Strengths and Gaps')[0]}
-                <Link to="/strengths">Strengths and Gaps</Link>
-                {copy.result.partialNote.split('Strengths and Gaps')[1].split('specific experiences')[0]}
-                <Link to="/experiences">specific experiences</Link>
-                {copy.result.partialNote.split('specific experiences')[1]}
-              </em>
-            </p>
+            <p><em>{copy.result.partialNote}</em></p>
           )}
         </>
       ) : (
@@ -184,9 +176,9 @@ export default function FitEvaluation() {
       )}
 
       <nav>
-        <Link to="/strengths">{copy.nav.viewStrengths}</Link>
+        <Link to="/strengths">{copy.nav.patterns}</Link>
         <span> | </span>
-        <Link to="/ask">{copy.nav.askFollowUp}</Link>
+        <Link to="/ask">{copy.nav.query}</Link>
         <span> | </span>
         <Link to="/">{copy.nav.backToHome}</Link>
       </nav>

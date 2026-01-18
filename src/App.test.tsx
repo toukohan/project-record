@@ -160,11 +160,11 @@ describe('FitEvaluation', () => {
 
   it('has submit button', () => {
     render(<MemoryRouter><FitEvaluation /></MemoryRouter>)
-    expect(screen.getByRole('button', { name: /Evaluate Fit/i })).toBeDefined()
+    expect(screen.getByRole('button', { name: /Evaluate/i })).toBeDefined()
   })
 
-  it('links to strengths page', () => {
+  it('links to patterns page', () => {
     render(<MemoryRouter><FitEvaluation /></MemoryRouter>)
-    expect(screen.getByText(/View Strengths and Gaps/i)).toBeDefined()
+    expect(screen.getByText(/Observed Patterns/i)).toBeDefined()
   })
 })

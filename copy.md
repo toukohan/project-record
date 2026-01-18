@@ -154,13 +154,13 @@ The items below are patterns inferred from documented project experiences. Each 
 ### Page Title
 Fit Evaluation
 
-### What This Tells You
-This tool provides a deterministic fit assessment based on role characteristics. It is grounded in my documented strengths and gaps. The goal is to save time for both sides by identifying mismatches early.
+### About This Page
+This evaluation maps role characteristics against documented patterns, constraints, and experience data. The output is a deterministic classification based on input values.
 
-### When to Trust the Result
-- **"Not a Fit"** — Stop here. Further exploration is unlikely to change this.
-- **"Strong Fit"** — Proceed with confidence. Explore further only if you have specific concerns.
-- **"Partial Fit"** — Review the concerns listed. Check strengths/gaps or specific experiences if concerns are critical to your decision.
+### Output Labels
+- **Not a Fit**: Significant gaps exist relative to the specified role characteristics.
+- **Strong Fit**: Role characteristics align well with documented patterns.
+- **Partial Fit**: Some alignment exists, with specific gaps or concerns identified.
 
 ### Form Labels
 
@@ -184,7 +184,7 @@ This tool provides a deterministic fit assessment based on role characteristics.
 - Moderate guidance available
 - Structured onboarding provided
 
-**Submit button:** Evaluate Fit
+**Submit button:** Evaluate
 
 ### Fit Result Labels
 - Strong Fit
@@ -194,7 +194,7 @@ This tool provides a deterministic fit assessment based on role characteristics.
 ### Result Section Headings
 - Alignment Points
 - Concerns
-- Recommendation
+- Analysis
 
 ### Fit Evaluation Responses
 
@@ -235,15 +235,15 @@ I recommend not proceeding. This is not a criticism of the role—it is an hones
 - High autonomy from day one may be challenging without domain context
 
 ### Partial Fit Note
-This result is partial. If concerns are critical, check Strengths and Gaps or specific experiences for more context.
+This result indicates partial alignment. Specific concerns are listed above.
 
 ### Buttons
-- Evaluate Fit
-- Evaluate Another Role
+- Evaluate
+- New Evaluation
 
 ### Navigation
-- View Strengths and Gaps
-- Ask follow-up questions
+- Observed Patterns
+- Query Interface
 - Back to home
 
 ---

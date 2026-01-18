@@ -383,7 +383,31 @@ Verified:
 - npm run build succeeds
 - copy.md updated
 
+## COPY-006b: Align Fit Evaluation page with Project Record framing ✓
+
+Implemented:
+- Changed "What This Tells You" to "About This Page"
+- Reframed intro: "maps role characteristics against documented patterns"
+- Changed "When to Trust the Result" to "Output Labels"
+- Output label descriptions now describe classification, not action
+- Changed "Recommendation" heading to "Analysis"
+- Changed button from "Evaluate Fit" to "Evaluate"
+- Changed button from "Evaluate Another Role" to "New Evaluation"
+- Simplified partial fit note (removed directive links)
+- Updated navigation to "Observed Patterns", "Query Interface"
+- Updated tests and copy.md
+
+Key decisions:
+- Preserved all evaluation logic and result categories
+- Reframed from prescriptive (what to do) to analytical (what the output means)
+- Form fields and input options unchanged
+
+Verified:
+- npm test passes (61 tests)
+- npm run build succeeds
+- copy.md updated
+
 ## Sprint Status
 
-All 20 PRD requirements pass.
+All 21 PRD requirements pass.
 Sprint complete.

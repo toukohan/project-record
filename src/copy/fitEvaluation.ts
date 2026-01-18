@@ -6,28 +6,26 @@
 export const fitEvaluation = {
   pageTitle: 'Fit Evaluation',
 
-  whatThisTellsYou: {
-    heading: 'What This Tells You',
+  about: {
+    heading: 'About This Page',
     content:
-      'This tool provides a deterministic fit assessment based on role characteristics. It is grounded in my documented strengths and gaps. The goal is to save time for both sides by identifying mismatches early.',
+      'This evaluation maps role characteristics against documented patterns, constraints, and experience data. The output is a deterministic classification based on input values.',
   },
 
-  whenToTrust: {
-    heading: 'When to Trust the Result',
+  outputLabels: {
+    heading: 'Output Labels',
     items: [
       {
-        label: '"Not a Fit"',
-        description: 'Stop here. Further exploration is unlikely to change this.',
+        label: 'Not a Fit',
+        description: 'Significant gaps exist relative to the specified role characteristics.',
       },
       {
-        label: '"Strong Fit"',
-        description:
-          'Proceed with confidence. Explore further only if you have specific concerns.',
+        label: 'Strong Fit',
+        description: 'Role characteristics align well with documented patterns.',
       },
       {
-        label: '"Partial Fit"',
-        description:
-          'Review the concerns listed. Check strengths/gaps or specific experiences if concerns are critical to your decision.',
+        label: 'Partial Fit',
+        description: 'Some alignment exists, with specific gaps or concerns identified.',
       },
     ],
   },
@@ -37,21 +35,21 @@ export const fitEvaluation = {
     teamSize: 'Team Size',
     domainFamiliarity: 'Domain Familiarity',
     autonomyLevel: 'Autonomy Level',
-    submitButton: 'Evaluate Fit',
+    submitButton: 'Evaluate',
   },
 
   result: {
     alignmentHeading: 'Alignment Points',
     concernsHeading: 'Concerns',
-    recommendationHeading: 'Recommendation',
-    evaluateAnother: 'Evaluate Another Role',
+    analysisHeading: 'Analysis',
+    evaluateAnother: 'New Evaluation',
     partialNote:
-      'This result is partial. If concerns are critical, check Strengths and Gaps or specific experiences for more context.',
+      'This result indicates partial alignment. Specific concerns are listed above.',
   },
 
   nav: {
-    viewStrengths: 'View Strengths and Gaps',
-    askFollowUp: 'Ask follow-up questions',
+    patterns: 'Observed Patterns',
+    query: 'Query Interface',
     backToHome: 'Back to home',
   },
 }
