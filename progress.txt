@@ -333,7 +333,33 @@ Verified:
 - npm run build succeeds
 - copy.md updated
 
+## COPY-005: Align Strengths page with Project Record framing ✓
+
+Implemented:
+- Changed title from "Strengths and Gaps" to "Observed Patterns"
+- Changed "What This Tells You" to "About This Page"
+- Reframed intro: "patterns inferred from documented project experiences"
+- Changed "How to Use This" to "Categories" with observational descriptions
+- Changed category descriptions to pattern-focused language:
+  - "Consistent": demonstrated repeatedly
+  - "Emerging": visible but not broadly established
+  - "Not yet evidenced": not present in records
+- Changed "Evidence:" to "Derived from:" label
+- Updated navigation to neutral labels
+- Strength/gap items themselves unchanged in substance
+- Updated tests and copy.md
+
+Key decisions:
+- Reframed entire page from self-assessment to pattern inference
+- Removed all imperative/advisory language ("compare", "proceed", "check")
+- Category explanations now describe what pattern types mean, not what reader should do
+
+Verified:
+- npm test passes (61 tests)
+- npm run build succeeds
+- copy.md updated
+
 ## Sprint Status
 
-All 18 PRD requirements pass.
+All 19 PRD requirements pass.
 Sprint complete.

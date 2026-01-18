@@ -4,31 +4,28 @@
  */
 
 export const strengths = {
-  pageTitle: 'Strengths and Gaps',
+  pageTitle: 'Observed Patterns',
 
-  whatThisTellsYou: {
-    heading: 'What This Tells You',
+  about: {
+    heading: 'About This Page',
     content:
-      'This is an honest assessment of where I can contribute and where I cannot. Each strength links to experiences that demonstrate it. Gaps are stated plainly without hedging.',
+      'The items below are patterns inferred from documented project experiences. Each links to the records from which it was derived.',
   },
 
-  howToUse: {
-    heading: 'How to Use This',
-    intro: 'Compare these against your role requirements:',
+  categories: {
+    heading: 'Categories',
     items: [
-      { label: 'Strong', description: 'items indicate reliable contribution areas' },
-      { label: 'Developing', description: 'items show growth potential with guidance' },
-      { label: 'Not my strength yet', description: 'items are gaps that may disqualify the fit' },
+      { label: 'Consistent', description: 'Patterns demonstrated repeatedly across multiple projects.' },
+      { label: 'Emerging', description: 'Patterns visible in some projects but not yet broadly established.' },
+      { label: 'Not yet evidenced', description: 'Patterns not present in the available records.' },
     ],
-    conclusion:
-      'If a gap matches a critical requirement for your role, this is likely not a fit. If strengths align with your needs and gaps are acceptable, proceed to the fit evaluation.',
   },
 
-  evidenceLabel: 'Evidence:',
+  evidenceLabel: 'Derived from:',
 
   nav: {
-    checkFit: 'Check fit for your specific role',
-    seeExperiences: 'See experiences that demonstrate these patterns',
+    fitEvaluation: 'Fit Evaluation',
+    experiences: 'Project Experiences',
     backToHome: 'Back to home',
   },
 }

@@ -108,26 +108,22 @@ All Experiences
 ## Strengths and Gaps Page (`/strengths`)
 
 ### Page Title
-Strengths and Gaps
+Observed Patterns
 
-### What This Tells You
-This is an honest assessment of where I can contribute and where I cannot. Each strength links to experiences that demonstrate it. Gaps are stated plainly without hedging.
+### About This Page
+The items below are patterns inferred from documented project experiences. Each links to the records from which it was derived.
 
-### How to Use This
-Compare these against your role requirements:
+### Categories
+- **Consistent**: Patterns demonstrated repeatedly across multiple projects.
+- **Emerging**: Patterns visible in some projects but not yet broadly established.
+- **Not yet evidenced**: Patterns not present in the available records.
 
-- **Strong** items indicate reliable contribution areas
-- **Developing** items show growth potential with guidance
-- **Not my strength yet** items are gaps that may disqualify the fit
-
-If a gap matches a critical requirement for your role, this is likely not a fit. If strengths align with your needs and gaps are acceptable, proceed to the fit evaluation.
-
-### Category Labels
+### Category Labels (used in strength sections)
 - Strong
 - Developing
 - Not my strength yet
 
-### Strength Items
+### Pattern Items
 
 **Strong:**
 - **Judgment under constraints** — Making practical decisions when time, resources, or information are limited.
@@ -143,12 +139,12 @@ If a gap matches a critical requirement for your role, this is likely not a fit.
 - **Demand validation** — Checking whether work will be used or valued before building.
 
 **Not my strength yet:**
-- **Experience with large-scale systems** — I have not worked on systems with high traffic or distributed architectures.
-- **Long-term ownership narratives** — I have not yet maintained a system over multiple years.
+- **Experience with large-scale systems** — Not evidenced in available records (no high-traffic or distributed systems).
+- **Long-term ownership narratives** — Not evidenced in available records (no multi-year system maintenance).
 
 ### Navigation
-- Check fit for your specific role
-- See experiences that demonstrate these patterns
+- Fit Evaluation
+- Project Experiences
 - Back to home
 
 ---

@@ -399,7 +399,33 @@
     "Confirm updated copy is reflected in copy.md"
   ],
   "passes": true
+},
+{
+  "id": "copy-005",
+  "title": "Align Strengths and Gaps page with Project Record framing",
+  "description": "Rewrite the Strengths and Gaps page framing copy to present strengths and limitations as observed patterns derived from project records, rather than self-assessed claims.",
+  "acceptance_criteria": [
+    "Strengths and Gaps page title uses neutral, record-oriented language",
+    "Introductory copy frames strengths and gaps as patterns inferred from documented projects",
+    "First-person language is removed from framing sections where possible",
+    "Language avoids self-evaluation, justification, or persuasion",
+    "Strengths are described as areas of demonstrated consistency, not asserted capability",
+    "Gaps are described as areas not yet evidenced in the available records",
+    "No imperative or advisory language is used (e.g. 'you should', 'compare', 'check')",
+    "Existing strength and gap items remain unchanged in substance",
+    "Evidence links remain intact and unchanged",
+    "No new categories, items, logic, or UI elements are introduced"
+  ],
+  "verification": [
+    "Manually review page framing to ensure it reads as observational rather than promotional",
+    "Confirm strengths and gaps feel derived from records, not narrated by the author",
+    "Verify no experience or strength data was modified",
+    "Run full test suite and confirm no regressions",
+    "Confirm updated copy is reflected in copy.md"
+  ],
+  "passes": true
 }
+
 
 
 

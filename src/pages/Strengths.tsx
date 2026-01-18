@@ -47,21 +47,19 @@ export default function Strengths() {
       <h1>{copy.pageTitle}</h1>
 
       <section>
-        <h2>{copy.whatThisTellsYou.heading}</h2>
-        <p>{copy.whatThisTellsYou.content}</p>
+        <h2>{copy.about.heading}</h2>
+        <p>{copy.about.content}</p>
       </section>
 
       <section>
-        <h2>{copy.howToUse.heading}</h2>
-        <p>{copy.howToUse.intro}</p>
+        <h2>{copy.categories.heading}</h2>
         <ul>
-          {copy.howToUse.items.map((item, i) => (
+          {copy.categories.items.map((item, i) => (
             <li key={i}>
-              <strong>{item.label}</strong> {item.description}
+              <strong>{item.label}</strong>: {item.description}
             </li>
           ))}
         </ul>
-        <p>{copy.howToUse.conclusion}</p>
       </section>
 
       <StrengthSection category="strong" />
@@ -69,9 +67,9 @@ export default function Strengths() {
       <StrengthSection category="notMyStrength" />
 
       <nav>
-        <Link to="/fit-evaluation">{copy.nav.checkFit}</Link>
+        <Link to="/fit-evaluation">{copy.nav.fitEvaluation}</Link>
         <span> | </span>
-        <Link to="/experiences">{copy.nav.seeExperiences}</Link>
+        <Link to="/experiences">{copy.nav.experiences}</Link>
         <span> | </span>
         <Link to="/">{copy.nav.backToHome}</Link>
       </nav>

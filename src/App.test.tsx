@@ -128,7 +128,7 @@ describe('Experiences', () => {
 describe('Strengths', () => {
   it('renders all three categories', () => {
     render(<MemoryRouter><Strengths /></MemoryRouter>)
-    expect(screen.getByRole('heading', { name: /Strengths and Gaps/i })).toBeDefined()
+    expect(screen.getByRole('heading', { name: /Observed Patterns/i })).toBeDefined()
     expect(screen.getByRole('heading', { name: /^Strong$/i })).toBeDefined()
     expect(screen.getByRole('heading', { name: /^Developing$/i })).toBeDefined()
     expect(screen.getByRole('heading', { name: /Not my strength yet/i })).toBeDefined()
