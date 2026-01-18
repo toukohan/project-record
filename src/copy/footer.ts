@@ -1,5 +1,5 @@
 export const footer = {
-  name: 'Touko Hanninen',
-  email: 'toukohanninen@gmail.com',
+  name: 'Touko Hänninen',
+  email: 'touko.hanninen@gmail.com',
   github: 'toukohan',
 }

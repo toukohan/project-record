@@ -172,8 +172,8 @@ describe('FitEvaluation', () => {
 describe('Footer', () => {
   it('renders contact metadata on landing page', () => {
     render(<App />)
-    expect(screen.getByText(/Touko Hanninen/i)).toBeDefined()
-    expect(screen.getByText(/toukohanninen@gmail.com/i)).toBeDefined()
+    expect(screen.getByText(/Touko Hänninen/i)).toBeDefined()
+    expect(screen.getByText(/touko\.hanninen@gmail\.com/i)).toBeDefined()
     // GitHub link
     const githubLink = screen.getByRole('link', { name: /toukohan/i })
     expect(githubLink).toBeDefined()

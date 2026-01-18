@@ -307,8 +307,8 @@ Capability Discovery Interface
 **Visible on all pages**
 
 Contact metadata (static, non-interactive):
-- Name: Touko Hanninen
-- Email: toukohanninen@gmail.com
+- Name: Touko Hänninen
+- Email: touko.hanninen@gmail.com
 - GitHub: toukohan
 
 Separator between items: ·
