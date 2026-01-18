@@ -27,47 +27,38 @@ export default function Ask() {
       <h1>{copy.pageTitle}</h1>
 
       <section>
-        <h2>{copy.whatThisTellsYou.heading}</h2>
-        <p>{copy.whatThisTellsYou.content}</p>
+        <h2>{copy.about.heading}</h2>
+        <p>{copy.about.content}</p>
       </section>
 
       <section>
-        <h2>{copy.whatYouCanAsk.heading}</h2>
+        <h2>{copy.scope.heading}</h2>
+        <p><strong>{copy.scope.included.label}</strong></p>
         <ul>
-          {copy.whatYouCanAsk.items.map((item, i) => (
+          {copy.scope.included.items.map((item, i) => (
             <li key={i}>{item}</li>
           ))}
         </ul>
-      </section>
-
-      <section>
-        <h2>{copy.whatItCannotAnswer.heading}</h2>
+        <p><strong>{copy.scope.excluded.label}</strong></p>
         <ul>
-          {copy.whatItCannotAnswer.items.map((item, i) => (
+          {copy.scope.excluded.items.map((item, i) => (
             <li key={i}>{item}</li>
           ))}
         </ul>
-        <p>
-          {copy.whatItCannotAnswer.note.split('Fit Evaluation')[0]}
-          <Link to="/fit-evaluation">Fit Evaluation</Link>
-          {copy.whatItCannotAnswer.note.split('Fit Evaluation')[1].split('Experiences')[0]}
-          <Link to="/experiences">Experiences</Link>
-          {copy.whatItCannotAnswer.note.split('Experiences')[1]}
-        </p>
       </section>
 
       {conversation.length > 0 && (
         <section>
           {conversation.map((turn, i) => (
             <div key={i}>
-              <p><strong>{copy.conversation.youLabel}</strong> {turn.question}</p>
+              <p><strong>{copy.conversation.queryLabel}</strong> {turn.question}</p>
               <div>
                 <p style={{ whiteSpace: 'pre-wrap' }}>{turn.response.answer}</p>
                 {turn.response.sources.length > 0 && (
                   <p><em>{copy.conversation.sourcesLabel} {turn.response.sources.join(', ')}</em></p>
                 )}
                 {turn.response.followUp && (
-                  <p><em>{copy.conversation.suggestionLabel} {turn.response.followUp}</em></p>
+                  <p><em>{copy.conversation.relatedLabel} {turn.response.followUp}</em></p>
                 )}
               </div>
               <hr />
@@ -93,9 +84,9 @@ export default function Ask() {
       </form>
 
       <nav>
-        <Link to="/experiences">{copy.nav.browseExperiences}</Link>
+        <Link to="/experiences">{copy.nav.experiences}</Link>
         <span> | </span>
-        <Link to="/strengths">{copy.nav.viewStrengths}</Link>
+        <Link to="/strengths">{copy.nav.patterns}</Link>
         <span> | </span>
         <Link to="/">{copy.nav.backToHome}</Link>
       </nav>

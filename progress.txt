@@ -359,7 +359,31 @@ Verified:
 - npm run build succeeds
 - copy.md updated
 
+## COPY-006a: Align Ask page with Project Record framing ✓
+
+Implemented:
+- Changed title from "Ask About How I Work" to "Query Interface"
+- Changed "What This Tells You" to "About This Page"
+- Reframed intro: "retrieves information from documented project experiences"
+- Changed "What You Can Ask" / "What It Cannot Answer" to "Query Scope"
+- Renamed scope sections to "Within scope:" and "Outside scope:"
+- Changed form labels: "Enter query...", "Submit", "Clear"
+- Changed conversation labels: "Query:", "Sources:", "Related:"
+- Updated navigation to neutral labels: "Project Experiences", "Observed Patterns"
+- Removed all first-person and imperative language
+- Updated tests and copy.md
+
+Key decisions:
+- Reframed from conversational assistant to inspection interface
+- Scope now describes what information is retrievable, not what to ask
+- Query logic and data sources unchanged
+
+Verified:
+- npm test passes (61 tests)
+- npm run build succeeds
+- copy.md updated
+
 ## Sprint Status
 
-All 19 PRD requirements pass.
+All 20 PRD requirements pass.
 Sprint complete.

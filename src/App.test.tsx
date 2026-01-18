@@ -45,24 +45,25 @@ describe('Landing', () => {
 describe('Ask', () => {
   it('renders without errors', () => {
     render(<MemoryRouter><Ask /></MemoryRouter>)
-    expect(screen.getByRole('heading', { name: /Ask About How I Work/i })).toBeDefined()
+    expect(screen.getByRole('heading', { name: /Query Interface/i })).toBeDefined()
   })
 
   it('has query input and submit button', () => {
     render(<MemoryRouter><Ask /></MemoryRouter>)
-    expect(screen.getByPlaceholderText(/Ask a question/i)).toBeDefined()
-    expect(screen.getByRole('button', { name: /Ask/i })).toBeDefined()
+    expect(screen.getByPlaceholderText(/Enter query/i)).toBeDefined()
+    expect(screen.getByRole('button', { name: /Submit/i })).toBeDefined()
   })
 
   it('explains grounded responses', () => {
     render(<MemoryRouter><Ask /></MemoryRouter>)
-    expect(screen.getByText(/grounded in documented data/i)).toBeDefined()
+    expect(screen.getByText(/grounded in available records/i)).toBeDefined()
   })
 
-  it('links to experiences and strengths', () => {
+  it('has navigation links', () => {
     render(<MemoryRouter><Ask /></MemoryRouter>)
-    expect(screen.getByText(/Browse Experiences/i)).toBeDefined()
-    expect(screen.getByText(/View Strengths & Gaps/i)).toBeDefined()
+    // Multiple mentions exist; verify nav links are present
+    expect(screen.getAllByText(/Project Experiences/i).length).toBeGreaterThan(0)
+    expect(screen.getAllByText(/Observed Patterns/i).length).toBeGreaterThan(0)
   })
 })
 

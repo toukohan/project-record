@@ -424,7 +424,57 @@
     "Confirm updated copy is reflected in copy.md"
   ],
   "passes": true
+},
+{
+  "id": "copy-006a",
+  "title": "Align Ask page with Project Record framing",
+  "description": "Rewrite the Ask page framing copy so it reads as an inspection surface over documented material rather than a conversational or assistant-style interface.",
+  "acceptance_criteria": [
+    "Ask page title and introductory text use neutral, record-oriented language",
+    "Framing presents the page as a way to inspect documented decisions, tradeoffs, and patterns",
+    "First-person language is removed from framing sections where possible",
+    "Language avoids conversational, assistant-like, or instructional tone",
+    "No imperative language is used (e.g. 'ask', 'try', 'use this')",
+    "Out-of-scope messaging remains factual and non-apologetic",
+    "Existing query logic, intent detection, and UI controls remain unchanged",
+    "No changes are made to AI behavior, pattern matching, or data sources",
+    "Tone matches Landing, Experiences, and Observed Patterns pages"
+  ],
+  "verification": [
+    "Manually review Ask page framing to confirm it reads as an inspection surface, not a chatbot",
+    "Confirm conversation UI text remains neutral and factual",
+    "Verify no copy changes were made outside the Ask page",
+    "Run full test suite and confirm no regressions",
+    "Confirm updated copy is reflected in copy.md"
+  ],
+  "passes": true
+},
+{
+  "id": "copy-006b",
+  "title": "Align Fit Evaluation page with Project Record framing",
+  "description": "Rewrite the Fit Evaluation page framing copy so the evaluation reads as a structured analytical lens applied to documented patterns, not as advice or recommendation.",
+  "acceptance_criteria": [
+    "Fit Evaluation page title and introductory text use neutral, analytical language",
+    "Evaluation is framed as a lens over documented strengths, gaps, and constraints",
+    "First-person language is removed from framing sections where possible",
+    "Language avoids advisory or outcome-directing phrasing",
+    "Fit outcomes are described as labels derived from inputs, not guidance",
+    "No imperative language is used (e.g. 'proceed', 'stop', 'decide')",
+    "Existing evaluation logic, scoring, and outcomes remain unchanged",
+    "No changes are made to form fields, inputs, or result categories",
+    "Tone matches Landing, Experiences, and Observed Patterns pages"
+  ],
+  "verification": [
+    "Manually review Fit Evaluation page framing to confirm it reads as analytical, not prescriptive",
+    "Confirm fit result labels and summaries remain logically consistent",
+    "Verify no copy changes were made outside the Fit Evaluation page",
+    "Run full test suite and confirm no regressions",
+    "Confirm updated copy is reflected in copy.md"
+  ],
+  "passes": false
 }
+
+
 
 
 

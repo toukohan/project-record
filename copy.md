@@ -251,38 +251,38 @@ This result is partial. If concerns are critical, check Strengths and Gaps or sp
 ## Ask Page (`/ask`)
 
 ### Page Title
-Ask About How I Work
+Query Interface
 
-### What This Tells You
-This interface answers questions about my experiences, decisions, strengths, and gaps. All responses are grounded in documented data—no generated claims, no speculation.
+### About This Page
+This interface retrieves information from documented project experiences, observed patterns, and fit evaluation logic. Responses are grounded in available records only.
 
-### What You Can Ask
-- Questions about specific experiences (e.g., "Tell me about the university project")
-- Questions about decisions and tradeoffs (e.g., "Why did you scope down?")
-- Questions about strengths and gaps (e.g., "What are your weaknesses?")
-- Questions about fit for a role type (e.g., "Would you fit a management role?")
+### Query Scope
 
-### What It Cannot Answer
-- Questions outside documented experiences
+**Within scope:**
+- Documented project experiences and their details
+- Decisions and tradeoffs recorded in experiences
+- Observed patterns and their evidence
+- Fit evaluation inputs and outputs
+
+**Outside scope:**
+- Topics not covered by documented records
 - Speculative or hypothetical scenarios
-- Topics unrelated to professional capability
-
-If you get an "out of scope" response, try the Fit Evaluation or browse Experiences directly.
+- Information not present in the source material
 
 ### Form Elements
-- Placeholder: Ask a question...
-- Aria label: Your question
-- Submit button: Ask
-- Clear button: Clear Conversation
+- Placeholder: Enter query...
+- Aria label: Query input
+- Submit button: Submit
+- Clear button: Clear
 
-### Conversation Display
-- You: [question]
+### Query Display
+- Query: [input]
 - Sources: [list]
-- Suggestion: [follow-up]
+- Related: [follow-up]
 
 ### Navigation
-- Browse Experiences
-- View Strengths & Gaps
+- Project Experiences
+- Observed Patterns
 - Back to home
 
 ---

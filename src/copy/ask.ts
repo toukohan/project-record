@@ -4,50 +4,51 @@
  */
 
 export const ask = {
-  pageTitle: 'Ask About How I Work',
+  pageTitle: 'Query Interface',
 
-  whatThisTellsYou: {
-    heading: 'What This Tells You',
+  about: {
+    heading: 'About This Page',
     content:
-      'This interface answers questions about my experiences, decisions, strengths, and gaps. All responses are grounded in documented data—no generated claims, no speculation.',
+      'This interface retrieves information from documented project experiences, observed patterns, and fit evaluation logic. Responses are grounded in available records only.',
   },
 
-  whatYouCanAsk: {
-    heading: 'What You Can Ask',
-    items: [
-      'Questions about specific experiences (e.g., "Tell me about the university project")',
-      'Questions about decisions and tradeoffs (e.g., "Why did you scope down?")',
-      'Questions about strengths and gaps (e.g., "What are your weaknesses?")',
-      'Questions about fit for a role type (e.g., "Would you fit a management role?")',
-    ],
-  },
-
-  whatItCannotAnswer: {
-    heading: 'What It Cannot Answer',
-    items: [
-      'Questions outside documented experiences',
-      'Speculative or hypothetical scenarios',
-      'Topics unrelated to professional capability',
-    ],
-    note: 'If you get an "out of scope" response, try the Fit Evaluation or browse Experiences directly.',
+  scope: {
+    heading: 'Query Scope',
+    included: {
+      label: 'Within scope:',
+      items: [
+        'Documented project experiences and their details',
+        'Decisions and tradeoffs recorded in experiences',
+        'Observed patterns and their evidence',
+        'Fit evaluation inputs and outputs',
+      ],
+    },
+    excluded: {
+      label: 'Outside scope:',
+      items: [
+        'Topics not covered by documented records',
+        'Speculative or hypothetical scenarios',
+        'Information not present in the source material',
+      ],
+    },
   },
 
   form: {
-    placeholder: 'Ask a question...',
-    ariaLabel: 'Your question',
-    submitButton: 'Ask',
-    clearButton: 'Clear Conversation',
+    placeholder: 'Enter query...',
+    ariaLabel: 'Query input',
+    submitButton: 'Submit',
+    clearButton: 'Clear',
   },
 
   conversation: {
-    youLabel: 'You:',
+    queryLabel: 'Query:',
     sourcesLabel: 'Sources:',
-    suggestionLabel: 'Suggestion:',
+    relatedLabel: 'Related:',
   },
 
   nav: {
-    browseExperiences: 'Browse Experiences',
-    viewStrengths: 'View Strengths & Gaps',
+    experiences: 'Project Experiences',
+    patterns: 'Observed Patterns',
     backToHome: 'Back to home',
   },
 }
