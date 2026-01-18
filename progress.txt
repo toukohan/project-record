@@ -407,7 +407,25 @@ Verified:
 - npm run build succeeds
 - copy.md updated
 
+## UI-007: Add subtle global footer with contact metadata ✓
+
+Implemented:
+- Created src/copy/footer.ts with contact metadata (name, email, GitHub)
+- Created src/components/Footer.tsx as a simple, non-interactive footer
+- Added Footer to App.tsx so it renders on all routes
+- Added .site-footer CSS styles (subdued: smaller font, muted color, centered)
+- No buttons, forms, or interactive elements beyond plain GitHub link
+- No imperative or persuasive language ("contact me", "reach out", etc.)
+- Added 2 tests: contact metadata presence, absence of call-to-action language
+- Updated copy.md with footer documentation
+
+Verified:
+- npm test passes (63 tests)
+- npm run build succeeds
+- Footer visible on all pages
+- copy.md updated
+
 ## Sprint Status
 
-All 21 PRD requirements pass.
+All 22 PRD requirements pass.
 Sprint complete.

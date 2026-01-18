@@ -299,3 +299,16 @@ Capability Discovery Interface
 **Back links:**
 - Back to home
 - Back to experiences
+
+---
+
+## Global Footer
+
+**Visible on all pages**
+
+Contact metadata (static, non-interactive):
+- Name: Touko Hanninen
+- Email: toukohanninen@gmail.com
+- GitHub: toukohan
+
+Separator between items: ·

@@ -472,7 +472,32 @@
     "Confirm updated copy is reflected in copy.md"
   ],
   "passes": true
+},
+{
+  "id": "ui-007",
+  "title": "Add subtle global footer with contact metadata",
+  "description": "Add a minimal, non-intrusive global footer that provides basic contact metadata without acting as a call to action or conversion surface.",
+  "acceptance_criteria": [
+    "A footer is visible on all pages of the application",
+    "Footer content is limited to static contact metadata (e.g. name, email, GitHub)",
+    "No imperative or persuasive language is used (e.g. 'contact me', 'reach out', 'let’s talk')",
+    "Footer does not include buttons, forms, or interactive elements",
+    "Footer content is visually subdued relative to main page content",
+    "Footer placement and styling do not interrupt reading flow",
+    "Footer does not introduce any new navigation paths or user flows",
+    "Footer content is sourced from a centralized copy or config file",
+    "No existing page copy or logic is modified"
+  ],
+  "verification": [
+    "Navigate to multiple routes and confirm footer is present and consistent",
+    "Confirm footer text reads as metadata rather than a call to action",
+    "Verify footer styling is visually subordinate to primary content",
+    "Run full test suite and confirm no regressions",
+    "Confirm footer content is documented in copy.md"
+  ],
+  "passes": true
 }
+
 
 
 

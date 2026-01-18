@@ -168,3 +168,26 @@ describe('FitEvaluation', () => {
     expect(screen.getByText(/Observed Patterns/i)).toBeDefined()
   })
 })
+
+describe('Footer', () => {
+  it('renders contact metadata on landing page', () => {
+    render(<App />)
+    expect(screen.getByText(/Touko Hanninen/i)).toBeDefined()
+    expect(screen.getByText(/toukohanninen@gmail.com/i)).toBeDefined()
+    // GitHub link
+    const githubLink = screen.getByRole('link', { name: /toukohan/i })
+    expect(githubLink).toBeDefined()
+    expect(githubLink.getAttribute('href')).toBe('https://github.com/toukohan')
+  })
+
+  it('contains no imperative or persuasive language', () => {
+    render(<App />)
+    const footer = document.querySelector('.site-footer')
+    expect(footer).toBeDefined()
+    const footerText = footer?.textContent || ''
+    // Verify absence of call-to-action language
+    expect(footerText.toLowerCase()).not.toContain('contact me')
+    expect(footerText.toLowerCase()).not.toContain('reach out')
+    expect(footerText.toLowerCase()).not.toContain("let's talk")
+  })
+})
