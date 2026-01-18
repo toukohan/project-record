@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 
 // For GitHub Pages deployment, set base to repo name
 // For custom domains or root deployment, use '/'
-const base = process.env.GITHUB_ACTIONS ? '/how-i-work/' : '/'
+const base = process.env.GITHUB_ACTIONS ? '/project-record/' : '/'
 
 export default defineConfig({
   plugins: [react()],

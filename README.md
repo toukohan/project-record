@@ -1,10 +1,10 @@
-# Capability Discovery Interface
+# Project Record
 
 A candidate-controlled landing page for employer evaluation.
 
 ## Live Demo
 
-**Deployment URL:** https://toukohan.github.io/how-i-work/
+**Deployment URL:** https://toukohan.github.io/project-record/
 
 ## Usage
 

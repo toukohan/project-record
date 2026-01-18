@@ -425,7 +425,24 @@ Verified:
 - Footer visible on all pages
 - copy.md updated
 
+## DEPLOY-002: Update deployment configuration after repository rename ✓
+
+Implemented:
+- Updated vite.config.ts: base path changed from '/how-i-work/' to '/project-record/'
+- Updated index.html: browser title changed from "Capability Discovery Interface" to "Project Record"
+- Updated README.md: title and deployment URL updated to reflect new repo name
+- Updated copy.md: browser title reference updated
+- No changes to application logic, data models, or page copy
+
+Verified:
+- npm test passes (63 tests)
+- npm run build succeeds
+- SPA routing configuration unchanged (still uses 404.html copy)
+- All references to old repo name removed from code/config
+
+Note: Actual deployment will occur after push when GitHub Actions runs.
+
 ## Sprint Status
 
-All 22 PRD requirements pass.
+All 23 PRD requirements pass.
 Sprint complete.

@@ -288,7 +288,7 @@ This interface retrieves information from documented project experiences, observ
 ---
 
 ## Browser Title
-Capability Discovery Interface
+Project Record
 
 ---
 

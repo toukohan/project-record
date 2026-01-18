@@ -496,7 +496,32 @@
     "Confirm footer content is documented in copy.md"
   ],
   "passes": true
+},
+{
+  "id": "deploy-002",
+  "title": "Update deployment configuration and site naming after repository rename",
+  "description": "Update deployment configuration, base paths, and visible site naming to reflect the repository rename to 'project-record'.",
+  "acceptance_criteria": [
+    "GitHub Pages deployment base path is updated to match the new repository name ('/project-record/')",
+    "Vite configuration reflects the updated base path for correct asset loading",
+    "SPA routing (including 404 handling) continues to work correctly under the new path",
+    "Public deployment URL points to the new repository-based GitHub Pages address",
+    "Any references to the old repository name are removed or updated",
+    "Browser title and site name reflect the intended product name (e.g. 'Project Record')",
+    "README is updated to reference the new repository name and deployment URL",
+    "No changes are made to application logic, copy content, or data models"
+  ],
+  "verification": [
+    "Deploy the site via GitHub Actions and confirm successful completion",
+    "Visit the new GitHub Pages URL and verify the site loads correctly",
+    "Confirm all routes work when accessed directly (refresh, deep links)",
+    "Verify assets (CSS, JS) load correctly without 404 errors",
+    "Confirm browser title displays the correct site name",
+    "Run full test suite and confirm no regressions"
+  ],
+  "passes": true
 }
+
 
 
 
