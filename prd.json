@@ -351,7 +351,32 @@
     "Confirm application behavior and rendering are unchanged"
   ],
   "passes": true
+},
+{
+  "id": "copy-003",
+  "title": "Rewrite landing page copy to be reader-centric and exploratory",
+  "description": "Rewrite the landing page copy to sound natural, calm, and hiring-manager centric, framing the page as a project record available for inspection rather than a guided evaluation or self-presentation.",
+  "acceptance_criteria": [
+    "Landing page title is updated to use a neutral, non-promotional framing (e.g. 'Project Record' or equivalent)",
+    "Primary framing avoids first-person narration where possible and does not center the author as the speaker",
+    "Language is exploratory and descriptive rather than directive or imperative",
+    "No phrases instruct the reader what to do (e.g. 'stop here', 'check', 'proceed', 'start with')",
+    "Evaluation affordances are presented as available views or angles, not as a recommended path",
+    "Tone is calm, factual, and human; avoids abstract system language (e.g. 'interface', 'capability discovery')",
+    "No new sections, routes, or features are introduced",
+    "Meaning and intent of existing content are preserved; only wording and framing change",
+    "Updated copy remains consistent with the overall workplan principles"
+  ],
+  "verification": [
+    "Manually review landing page copy to confirm absence of imperative or patronizing language",
+    "Confirm landing page reads naturally when read aloud",
+    "Verify no other pages were modified",
+    "Run full test suite and confirm no regressions",
+    "Confirm copy changes are reflected in copy.md"
+  ],
+  "passes": true
 }
+
 
 
 

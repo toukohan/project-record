@@ -8,42 +8,40 @@ Use this for tone review, iteration, and external feedback.
 ## Landing Page (`/`)
 
 ### Page Title
-Capability Discovery Interface
+Project Record
 
 ### Introduction
-This interface helps you decide whether I can contribute to your team, learn your domain, and deliver under real constraints.
+This is a record of past projects, decisions made under constraints, and lessons learned.
 
-Instead of claims, you can investigate. Instead of filtering, you can explore.
+The materials here are available for inspection. They document what was built, how, and why.
 
-### Recommended Evaluation Path
+### Available Views
 
-**Section heading:** Recommended Evaluation Path
+**Section heading:** Available Views
 
-**Lead-in:** Most evaluations take 2–5 minutes.
-
-**Step 1 - Fit Evaluation**
+**Fit Evaluation**
 - Link text: Fit Evaluation
-- Description: Answer 4 questions. Get a clear fit assessment. Often sufficient to decide.
+- Description: A short questionnaire that maps role characteristics to documented strengths and gaps.
 
-**Step 2 - Strengths and Gaps**
+**Strengths and Gaps**
 - Link text: Strengths and Gaps
-- Description: Explicit capabilities and limitations. Check if fit is partial.
+- Description: An honest breakdown of capabilities and limitations, with links to supporting experiences.
 
-**Step 3 - Experiences**
+**Experiences**
 - Link text: Experiences
-- Description: Read 1–2 relevant experiences. Not all are required.
+- Description: Detailed project records covering context, constraints, decisions, and outcomes.
 
-**Step 4 - Ask**
+**Ask**
 - Link text: Ask
-- Description: Query specific decisions or reasoning. Best for follow-up.
+- Description: A query interface for exploring specific decisions, tradeoffs, or reasoning.
 
-### When to Stop
+### Fit Outcomes
 
-**Section heading:** When to Stop
+**Section heading:** Fit Outcomes
 
-- **"Not a Fit"** — You have enough information. Stop here.
-- **"Strong Fit"** — Proceed directly. No further exploration needed.
-- **"Partial Fit"** — Check concerns in Strengths or Experiences.
+- **Not a Fit** — Clear misalignment. The fit evaluation explains why.
+- **Strong Fit** — Good alignment with documented strengths.
+- **Partial Fit** — Some alignment, with specific concerns noted.
 
 ---
 

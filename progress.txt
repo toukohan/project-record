@@ -286,7 +286,31 @@ Verified:
 - npm test passes (61 tests)
 - npm run build succeeds
 
+## COPY-003: Rewrite landing page copy ✓
+
+Implemented:
+- Changed title from "Capability Discovery Interface" to "Project Record"
+- Rewrote intro to be reader-centric: "This is a record of past projects..."
+- Changed "Recommended Evaluation Path" to "Available Views"
+- Changed "When to Stop" to "Fit Outcomes"
+- Removed all imperative language (stop here, check, proceed, answer, read)
+- Removed first-person narration ("I can contribute")
+- Removed abstract system language ("interface", "capability discovery")
+- Descriptions are now factual and descriptive, not directive
+- Updated tests and copy.md to reflect changes
+
+Key decisions:
+- Preserved semantic structure (two sections, same four links)
+- Changed framing from "telling reader what to do" to "describing what's available"
+- Fit outcomes now describe what each level means, not what to do about it
+
+Verified:
+- npm test passes (61 tests)
+- npm run build succeeds
+- No other pages modified
+- copy.md updated to match
+
 ## Sprint Status
 
-All 16 PRD requirements pass.
+All 17 PRD requirements pass.
 Sprint complete.

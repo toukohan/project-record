@@ -4,54 +4,59 @@
  */
 
 export const landing = {
-  pageTitle: 'Capability Discovery Interface',
+  pageTitle: 'Project Record',
 
   intro: {
     paragraph1:
-      'This interface helps you decide whether I can contribute to your team, learn your domain, and deliver under real constraints.',
+      'This is a record of past projects, decisions made under constraints, and lessons learned.',
     paragraph2:
-      'Instead of claims, you can investigate. Instead of filtering, you can explore.',
+      'The materials here are available for inspection. They document what was built, how, and why.',
   },
 
-  evaluationPath: {
-    heading: 'Recommended Evaluation Path',
-    leadIn: 'Most evaluations take 2–5 minutes.',
-    steps: [
+  sections: {
+    heading: 'Available Views',
+    items: [
       {
         linkText: 'Fit Evaluation',
+        path: '/fit-evaluation',
         description:
-          'Answer 4 questions. Get a clear fit assessment. Often sufficient to decide.',
+          'A short questionnaire that maps role characteristics to documented strengths and gaps.',
       },
       {
         linkText: 'Strengths and Gaps',
+        path: '/strengths',
         description:
-          'Explicit capabilities and limitations. Check if fit is partial.',
+          'An honest breakdown of capabilities and limitations, with links to supporting experiences.',
       },
       {
         linkText: 'Experiences',
-        description: 'Read 1–2 relevant experiences. Not all are required.',
+        path: '/experiences',
+        description:
+          'Detailed project records covering context, constraints, decisions, and outcomes.',
       },
       {
         linkText: 'Ask',
-        description: 'Query specific decisions or reasoning. Best for follow-up.',
+        path: '/ask',
+        description:
+          'A query interface for exploring specific decisions, tradeoffs, or reasoning.',
       },
     ],
   },
 
-  whenToStop: {
-    heading: 'When to Stop',
+  fitOutcomes: {
+    heading: 'Fit Outcomes',
     items: [
       {
-        label: '"Not a Fit"',
-        description: 'You have enough information. Stop here.',
+        label: 'Not a Fit',
+        description: 'Clear misalignment. The fit evaluation explains why.',
       },
       {
-        label: '"Strong Fit"',
-        description: 'Proceed directly. No further exploration needed.',
+        label: 'Strong Fit',
+        description: 'Good alignment with documented strengths.',
       },
       {
-        label: '"Partial Fit"',
-        description: 'Check concerns in Strengths or Experiences.',
+        label: 'Partial Fit',
+        description: 'Some alignment, with specific concerns noted.',
       },
     ],
   },

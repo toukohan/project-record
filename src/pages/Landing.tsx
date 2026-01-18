@@ -11,37 +11,23 @@ export default function Landing() {
       <p>{landing.intro.paragraph2}</p>
 
       <section>
-        <h2>{landing.evaluationPath.heading}</h2>
-        <p>{landing.evaluationPath.leadIn}</p>
+        <h2>{landing.sections.heading}</h2>
 
-        <ol className="evaluation-steps">
-          <li>
-            <Link to="/fit-evaluation"><strong>{landing.evaluationPath.steps[0].linkText}</strong></Link>
-            <br />
-            <span>{landing.evaluationPath.steps[0].description}</span>
-          </li>
-          <li>
-            <Link to="/strengths"><strong>{landing.evaluationPath.steps[1].linkText}</strong></Link>
-            <br />
-            <span>{landing.evaluationPath.steps[1].description}</span>
-          </li>
-          <li>
-            <Link to="/experiences"><strong>{landing.evaluationPath.steps[2].linkText}</strong></Link>
-            <br />
-            <span>{landing.evaluationPath.steps[2].description}</span>
-          </li>
-          <li>
-            <Link to="/ask"><strong>{landing.evaluationPath.steps[3].linkText}</strong></Link>
-            <br />
-            <span>{landing.evaluationPath.steps[3].description}</span>
-          </li>
-        </ol>
+        <ul>
+          {landing.sections.items.map((item, i) => (
+            <li key={i}>
+              <Link to={item.path}><strong>{item.linkText}</strong></Link>
+              <br />
+              <span>{item.description}</span>
+            </li>
+          ))}
+        </ul>
       </section>
 
       <section>
-        <h2>{landing.whenToStop.heading}</h2>
+        <h2>{landing.fitOutcomes.heading}</h2>
         <ul>
-          {landing.whenToStop.items.map((item, i) => (
+          {landing.fitOutcomes.items.map((item, i) => (
             <li key={i}>
               <strong>{item.label}</strong> — {item.description}
             </li>

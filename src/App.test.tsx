@@ -12,35 +12,33 @@ import FitEvaluation from './pages/FitEvaluation'
 describe('App', () => {
   it('renders without crashing', () => {
     render(<App />)
-    expect(screen.getByRole('heading', { name: /Capability Discovery Interface/i })).toBeDefined()
+    expect(screen.getByRole('heading', { name: /Project Record/i })).toBeDefined()
   })
 
-  it('displays evaluation-focused positioning statement', () => {
+  it('displays reader-centric positioning statement', () => {
     render(<App />)
-    expect(screen.getByText(/helps you decide whether I can contribute/i)).toBeDefined()
+    expect(screen.getByText(/record of past projects/i)).toBeDefined()
   })
 })
 
 describe('Landing', () => {
-  it('displays recommended evaluation path', () => {
+  it('displays available views section', () => {
     render(<MemoryRouter><Landing /></MemoryRouter>)
-    expect(screen.getByRole('heading', { name: /Recommended Evaluation Path/i })).toBeDefined()
-    expect(screen.getByText(/2–5 minutes/i)).toBeDefined()
+    expect(screen.getByRole('heading', { name: /Available Views/i })).toBeDefined()
   })
 
-  it('displays evaluation sections with links', () => {
+  it('displays section links', () => {
     render(<MemoryRouter><Landing /></MemoryRouter>)
-    // Multiple mentions of each section exist; verify at least one
     expect(screen.getAllByText(/Fit Evaluation/i).length).toBeGreaterThan(0)
     expect(screen.getAllByText(/Strengths and Gaps/i).length).toBeGreaterThan(0)
     expect(screen.getAllByText(/Experiences/i).length).toBeGreaterThan(0)
-    // Check both lists exist (evaluation path + when to stop)
+    // Check both lists exist (available views + fit outcomes)
     expect(screen.getAllByRole('list').length).toBeGreaterThanOrEqual(2)
   })
 
-  it('displays when to stop guidance', () => {
+  it('displays fit outcomes', () => {
     render(<MemoryRouter><Landing /></MemoryRouter>)
-    expect(screen.getByRole('heading', { name: /When to Stop/i })).toBeDefined()
+    expect(screen.getByRole('heading', { name: /Fit Outcomes/i })).toBeDefined()
   })
 })
 
