@@ -34,8 +34,8 @@ describe('Landing', () => {
     expect(screen.getAllByText(/Fit Evaluation/i).length).toBeGreaterThan(0)
     expect(screen.getAllByText(/Strengths and Gaps/i).length).toBeGreaterThan(0)
     expect(screen.getAllByText(/Experiences/i).length).toBeGreaterThan(0)
-    // Check the ordered list contains the evaluation path
-    expect(screen.getByRole('list')).toBeDefined()
+    // Check both lists exist (evaluation path + when to stop)
+    expect(screen.getAllByRole('list').length).toBeGreaterThanOrEqual(2)
   })
 
   it('displays when to stop guidance', () => {

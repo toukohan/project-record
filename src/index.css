@@ -84,6 +84,17 @@ li {
   margin-bottom: 0.5rem;
 }
 
+/* Evaluation steps - increased spacing for scanability */
+ol.evaluation-steps li {
+  margin-bottom: 1.25rem;
+  line-height: 1.5;
+}
+
+ol.evaluation-steps li span {
+  color: #444;
+  font-size: 0.95rem;
+}
+
 /* Links - understated but discoverable */
 a {
   color: #0056b3;

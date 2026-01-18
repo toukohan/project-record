@@ -285,7 +285,32 @@
     "Confirm no snapshot or UI tests fail due to content changes"
   ],
   "passes": true
+},
+{
+  "id": "ui-004",
+  "title": "Reduce content density and improve scanability on landing page",
+  "description": "Refine layout and content presentation to reduce cognitive load and improve scanability, without changing tone, meaning, or introducing visual branding.",
+  "acceptance_criteria": [
+    "Primary sections on the landing page are visually distinct through spacing and structure, not color or decoration",
+    "Long paragraphs are broken into shorter paragraphs or lists where appropriate, without changing wording meaning",
+    "Key guidance sections (Recommended Evaluation Path, When to Stop) are visually emphasized through layout hierarchy",
+    "The evaluation path steps are easy to scan individually and do not require linear reading",
+    "The page can be meaningfully skimmed in under 30 seconds",
+    "No new copy is added beyond minimal structural helpers (e.g. labels, short lead-in lines)",
+    "Tone remains neutral, factual, and non-persuasive",
+    "No animations, illustrations, icons, or branding elements are introduced",
+    "No new routes, components, or business logic are added"
+  ],
+  "verification": [
+    "Visually inspect landing page on desktop viewport and confirm clear separation of conceptual sections",
+    "Verify that key guidance sections are immediately noticeable without scrolling excessively",
+    "Confirm that a reader can understand the intended evaluation flow by skimming headings and lists only",
+    "Run full test suite and confirm no regressions",
+    "Confirm all existing UI and snapshot tests pass without semantic changes"
+  ],
+  "passes": true
 }
+
 
 
 

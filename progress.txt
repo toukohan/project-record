@@ -230,7 +230,28 @@ Verified:
 - npm test passes (61 tests)
 - No new components or logic introduced
 
+## UI-004: Reduce content density on landing page ✓
+
+Implemented:
+- Restructured evaluation path list for better scanability
+- Each step now has link on separate line from description
+- Shortened descriptions to essential information
+- Converted "When to Stop" from paragraph to scannable bullet list
+- Added spacing for evaluation steps via CSS class
+- Descriptions in slightly smaller, muted text for visual hierarchy
+
+Key decisions:
+- Used <br> tags to separate link from description within list items
+- Added .evaluation-steps CSS class for increased item spacing
+- No new copy added - only restructured existing content
+- Tone remains neutral, factual, non-persuasive
+
+Verified:
+- npm run build succeeds
+- npm test passes (61 tests)
+- No new components or logic introduced
+
 ## Sprint Status
 
-All 12 PRD requirements pass.
+All 13 PRD requirements pass.
 Sprint complete.
